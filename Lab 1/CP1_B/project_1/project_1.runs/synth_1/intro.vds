@@ -1,0 +1,589 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Aug 27 21:36:45 2024
+# Process ID: 25828
+# Current directory: C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log intro.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source intro.tcl
+# Log file: C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/project_1/project_1.runs/synth_1/intro.vds
+# Journal file: C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/project_1/project_1.runs/synth_1\vivado.jou
+# Running On: DESKTOP-AENBBM7, OS: Windows, CPU Frequency: 2208 MHz, CPU Physical cores: 6, Host memory: 17071 MB
+#-----------------------------------------------------------
+source intro.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1002.250 ; gain = 118.547
+Command: synth_design -top intro -part xc7a75tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a75t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a75t'
+INFO: [Device 21-403] Loading part xc7a75tfgg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 52084
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1827.473 ; gain = 406.930
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'intro' [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/intro.v:3]
+INFO: [Synth 8-6157] synthesizing module 'IBUFGDS' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71834]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFGDS' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71834]
+INFO: [Synth 8-6155] done synthesizing module 'intro' (0#1) [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/intro.v:3]
+WARNING: [Synth 8-7129] Port button[3] in module intro is either unconnected or has no load
+WARNING: [Synth 8-7129] Port button[2] in module intro is either unconnected or has no load
+WARNING: [Synth 8-7129] Port button[1] in module intro is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1917.832 ; gain = 497.289
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1917.832 ; gain = 497.289
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1917.832 ; gain = 497.289
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1917.832 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc]
+WARNING: [Vivado 12-584] No ports matched 'okHU[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okHU[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okHU[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUH[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUH[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUH[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUH[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUH[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUH[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[8]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[9]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[10]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[11]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[12]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[13]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[14]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[15]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[16]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[17]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[18]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[19]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[20]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[21]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[22]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[23]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[24]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[25]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[26]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[27]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[28]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[29]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[30]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[31]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okAA'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okAA'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'okUH[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:70]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports {okUH[0]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:70]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:72]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:72]
+WARNING: [Vivado 12-584] No ports matched 'okUH[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:72]
+CRITICAL WARNING: [Vivado 12-4739] set_input_delay:No valid object(s) found for '-objects [get_ports {okUH[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:72]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:73]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:73]
+WARNING: [Vivado 12-584] No ports matched 'okUH[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:73]
+CRITICAL WARNING: [Vivado 12-4739] set_input_delay:No valid object(s) found for '-objects [get_ports {okUH[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:73]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'okUH[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:74]
+CRITICAL WARNING: [Vivado 12-4739] set_multicycle_path:No valid object(s) found for '-from [get_ports {okUH[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:74]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:76]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'okUHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:76]
+CRITICAL WARNING: [Vivado 12-4739] set_input_delay:No valid object(s) found for '-objects [get_ports {okUHU[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:76]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:77]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'okUHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:77]
+CRITICAL WARNING: [Vivado 12-4739] set_input_delay:No valid object(s) found for '-objects [get_ports {okUHU[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:77]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'okUHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:78]
+CRITICAL WARNING: [Vivado 12-4739] set_multicycle_path:No valid object(s) found for '-from [get_ports {okUHU[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:78]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:80]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:80]
+WARNING: [Vivado 12-584] No ports matched 'okHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:80]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-objects [get_ports {okHU[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:80]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:81]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:81]
+WARNING: [Vivado 12-584] No ports matched 'okHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:81]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-objects [get_ports {okHU[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:81]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:83]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:83]
+WARNING: [Vivado 12-584] No ports matched 'okUHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:83]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-objects [get_ports {okUHU[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:83]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:84]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:84]
+WARNING: [Vivado 12-584] No ports matched 'okUHU[*]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:84]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-objects [get_ports {okUHU[*]}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:84]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'mmcm0_clk0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:97]
+WARNING: [Vivado 12-627] No clocks matched 'okUH0'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:97]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:97]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks {mmcm0_clk0 okUH0}]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:97]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group '. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:97]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Vivado 12-5201] set_clock_groups: cannot set the clock group when only one non-empty group remains. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:97]
+WARNING: [Vivado 12-584] No ports matched 'reset'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:102]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:103]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'reset'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:104]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_LVDS_CLK_P'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:108]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:108]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300-LVDS_CLK_P'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:109]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:109]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_LVDS_CLK_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:111]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_LVDS_CLK_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SYS_RES_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:124]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:124]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SYS_RES_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:125]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:125]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Enable_LVDS'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Enable_LVDS'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_EN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:131]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:131]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_EN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:132]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:132]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:134]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:134]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:135]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:135]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:137]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:137]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:138]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:138]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_CLK'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:140]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_CLK'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_FRAME_REQ'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:152]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:152]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_FRAME_REQ'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:153]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:153]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:198]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:198]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:199]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:199]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:201]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:201]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:202]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:202]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:204]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:204]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:205]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:205]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:207]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:207]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:208]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:208]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:210]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:210]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:211]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:211]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:213]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:213]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:214]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:214]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:216]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:216]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:217]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:217]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:219]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:219]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:220]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:220]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[8]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:222]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:222]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:222]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:223]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:225]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:226]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:229]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:230]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:232]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:233]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:239]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:240]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:242]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc:243]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/xem7310_v1.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/intro_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/intro_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1985.012 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUFGDS => IBUFDS: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1985.012 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a75tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   3 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 180 (col length:80)
+BRAMs: 210 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port button[3] in module intro is either unconnected or has no load
+WARNING: [Synth 8-7129] Port button[2] in module intro is either unconnected or has no load
+WARNING: [Synth 8-7129] Port button[1] in module intro is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |     8|
+|3     |LUT1    |    11|
+|4     |LUT2    |     7|
+|5     |LUT3    |     2|
+|6     |LUT4    |     4|
+|7     |LUT5    |     6|
+|8     |LUT6    |     9|
+|9     |FDRE    |    34|
+|10    |IBUF    |     1|
+|11    |IBUFGDS |     1|
+|12    |OBUF    |     8|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 1985.012 ; gain = 497.289
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1985.012 ; gain = 564.469
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1985.012 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1985.012 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IBUFGDS => IBUFDS: 1 instance 
+
+Synth Design complete, checksum: 5c84859e
+INFO: [Common 17-83] Releasing license: Synthesis
+33 Infos, 117 Warnings, 114 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 1985.012 ; gain = 982.762
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 1/CP1_B/project_1/project_1.runs/synth_1/intro.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file intro_utilization_synth.rpt -pb intro_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 27 21:37:33 2024...
