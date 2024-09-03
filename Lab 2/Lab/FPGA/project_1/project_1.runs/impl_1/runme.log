@@ -1,0 +1,391 @@
+
+*** Running vivado
+    with args -log lab2_example.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source lab2_example.tcl -notrace
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source lab2_example.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1002.867 ; gain = 117.875
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Vivado-2021'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.runs/impl_1/{C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.cache/ip} 
+Command: link_design -top lab2_example -part xc7a75tfgg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a75tfgg484-1
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.gen/sources_1/ip/ila_0/ila_0.dcp' for cell 'ila'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1489.723 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 234 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: ila UUID: 901a5f55-8b29-50a8-8131-f43987f6be78 
+Parsing XDC File [c:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'ila/inst'
+Finished Parsing XDC File [c:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'ila/inst'
+Parsing XDC File [c:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'ila/inst'
+Finished Parsing XDC File [c:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'ila/inst'
+Parsing XDC File [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc]
+WARNING: [Constraints 18-6211] Setting input delay on a clock pin 'okUH[0]' relative to clock 'okUH0' defined on the same pin is not supported, ignoring it [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:72]
+WARNING: [Constraints 18-6211] Setting input delay on a clock pin 'okUH[0]' relative to clock 'okUH0' defined on the same pin is not supported, ignoring it [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:73]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:97]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:97]
+get_clocks: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2202.020 ; gain = 574.176
+WARNING: [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:104]
+WARNING: [Vivado 12-584] No ports matched 'CVM300_LVDS_CLK_P'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:108]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:108]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300-LVDS_CLK_P'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:109]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:109]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_LVDS_CLK_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:111]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_LVDS_CLK_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:116]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:119]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_CLK_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:120]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:120]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SYS_RES_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:124]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:124]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SYS_RES_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:125]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:125]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Enable_LVDS'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:127]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:127]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Enable_LVDS'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:128]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:128]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_EN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:131]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:131]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_EN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:132]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:132]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:134]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:134]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_IN'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:135]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:135]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:137]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:137]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_OUT'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:138]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:138]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_CLK'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:140]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:140]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_SPI_CLK'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:141]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:141]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_FRAME_REQ'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:152]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:152]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_FRAME_REQ'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:153]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:153]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:198]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:198]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:199]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:199]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:201]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:201]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:202]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:202]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:204]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:204]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:205]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:205]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:207]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:207]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:208]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:208]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:210]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:210]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:211]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:211]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:213]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:213]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:214]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:214]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:216]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:216]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:217]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:217]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:219]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:219]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:220]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:220]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[8]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:222]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:222]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[8]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:223]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:223]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[9]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:225]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:225]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_D[9]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:226]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:226]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Line_valid'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:229]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:229]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Line_valid'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:230]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:230]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Data_valid'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:232]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:232]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CVM300_Data_valid'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:233]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:233]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:239]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:239]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:240]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:240]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:242]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:242]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:243]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:243]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:245]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:245]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:246]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:246]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:248]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:248]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:249]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:249]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:251]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:251]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:252]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:252]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:254]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:254]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:255]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:255]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:257]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:257]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:258]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:258]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:260]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:260]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_33[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:261]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:261]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_SRCC_P'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:264]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:264]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_SRCC_P'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:265]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:265]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_SRCC_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:267]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:267]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_SRCC_N'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:268]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:268]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:273]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:273]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[0]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:274]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:274]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:276]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:276]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[1]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:277]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:277]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:279]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:279]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[2]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:280]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:280]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:282]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:282]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[3]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:283]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:283]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:285]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:285]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[4]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:286]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:286]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:288]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:288]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[5]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:289]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:289]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:291]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:291]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[6]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:292]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:292]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:294]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:294]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'USER_25[7]'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:295]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:295]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A1'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:300]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:300]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A1'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:301]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:301]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A2'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:303]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:303]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A2'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:304]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:304]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A3'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:306]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:306]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A3'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:307]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:307]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A4'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:309]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:309]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A4'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:310]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:310]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A7'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:312]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:312]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A7'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:313]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:313]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A8'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:315]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:315]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A8'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:316]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:316]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A9'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:318]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:318]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A9'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:319]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:319]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A10'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:321]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:321]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_A10'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:322]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:322]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_B1'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:327]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:327]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'PMOD_B1'. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:328]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:328]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:328]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:328]
+Finished Parsing XDC File [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2202.020 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 139 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 44 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 33 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 50 instances
+  RAM128X1S => RAM128X1S (MUXF7, RAMS64E(x2)): 8 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances
+
+16 Infos, 104 Warnings, 100 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2202.020 ; gain = 1135.492
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a75t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a75t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2202.020 ; gain = 0.000
+
+Starting Cache Timing Information Task
+WARNING: [Constraints 18-6211] Setting input delay on a clock pin 'okUH[0]' relative to clock 'okUH0' defined on the same pin is not supported, ignoring it [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:72]
+WARNING: [Constraints 18-6211] Setting input delay on a clock pin 'okUH[0]' relative to clock 'okUH0' defined on the same pin is not supported, ignoring it [C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/xem7310_v1.xdc:73]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 146c9cdec
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.177 . Memory (MB): peak = 2218.934 ; gain = 16.914
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+ERROR: [Chipscope 16-302] Could not generate core for dbg_hub. Aborting IP Generation operaion. The current Vivado temporary directory path, 'C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.runs/impl_1/.Xil/Vivado-16236-DESKTOP-AENBBM7', is 160 characters. Errors on the host OS will occur when trying to insert logic for debug core 'dbg_hub' when temporary directory paths exceed 146 characters. Please move this Vivado project or the Vivado working directory to a shorter path; alternately consider using the OS subst command to map part of the path to a drive letter.
+  
+	
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 146c9cdec
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2555.152 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+23 Infos, 106 Warnings, 100 Critical Warnings and 2 Errors encountered.
+opt_design failed
+ERROR: [Chipscope 16-338] Implementing debug Cores failed due to earlier errors
+INFO: [Common 17-206] Exiting Vivado at Mon Sep  2 11:13:26 2024...
