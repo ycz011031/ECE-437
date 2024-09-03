@@ -108,6 +108,9 @@ module lab2_example(
             3: begin
                 counter <= counter - 2;
                 end
+            5: begin
+                counter <= 0;
+                end    
             default: begin
                 counter <= counter;
                 end
