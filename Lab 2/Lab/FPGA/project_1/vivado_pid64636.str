@@ -139,3 +139,384 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.gen/sources_1'. 
 // Tcl Message: Scanning sources... Finished scanning sources 
 // Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Vivado-2021'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:11 . Memory (MB): peak = 1725.207 ; gain = 195.598 
+// Project name: project_1; location: C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1; part: xc7a75tfgg484-1
+dismissDialog("Open Project"); // bq
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab2_example (lab2_example.v)]", 1); // D
+// HMemoryUtils.trashcanNow. Engine heap size: 1,588 MB. GUI used memory: 62 MB. Current time: 9/1/24, 2:48:17 PM CDT
+// PAPropertyPanels.initPanels (lab2_example.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab2_example (lab2_example.v)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab2_example (lab2_example.v)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, lab2_example (lab2_example.v)]", 1); // D
+// [Engine Memory]: 1,594 MB (+416kb) [00:01:08]
+// [GUI Memory]: 125 MB (+10843kb) [00:01:41]
+// Elapsed time: 197 seconds
+selectCodeEditor("lab2_example.v", 76, 274); // ac
+selectCodeEditor("lab2_example.v", 76, 274, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 100, 274); // ac
+selectCodeEditor("lab2_example.v", 101, 274, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 164, 122); // ac
+selectCodeEditor("lab2_example.v", 164, 122, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 147, 277); // ac
+selectCodeEditor("lab2_example.v", 147, 277, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 401, 209); // ac
+selectCodeEditor("lab2_example.v", 240, 185); // ac
+selectCodeEditor("lab2_example.v", 240, 185, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 412, 168); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,608 MB. GUI used memory: 65 MB. Current time: 9/1/24, 2:52:03 PM CDT
+selectButton(PAResourceCommand.PACommandNames_TOGGLE_VIEW_NAV, (String) null); // B
+// Run Command: PAResourceCommand.PACommandNames_TOGGLE_VIEW_NAV
+// Elapsed time: 94 seconds
+selectCodeEditor("lab2_example.v", 405, 308); // ac
+// Run Command: RDIResourceCommand.RDICommands_UNSELECT_ALL
+// Elapsed time: 12 seconds
+selectCodeEditor("lab2_example.v", 356, 45); // ac
+selectCodeEditor("lab2_example.v", 289, 197); // ac
+selectCodeEditor("lab2_example.v", 171, 231); // ac
+selectCodeEditor("lab2_example.v", 179, 230); // ac
+selectCodeEditor("lab2_example.v", 212, 54); // ac
+selectCodeEditor("lab2_example.v", 226, 126); // ac
+selectCodeEditor("lab2_example.v", 225, 125, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 511, 186); // ac
+selectCodeEditor("lab2_example.v", 81, 171); // ac
+selectCodeEditor("lab2_example.v", 105, 209); // ac
+selectCodeEditor("lab2_example.v", 105, 186); // ac
+selectCodeEditor("lab2_example.v", 318, 192); // ac
+selectCodeEditor("lab2_example.v", 147, 178); // ac
+selectCodeEditor("lab2_example.v", 125, 178); // ac
+selectCodeEditor("lab2_example.v", 121, 186); // ac
+selectCodeEditor("lab2_example.v", 128, 211); // ac
+selectCodeEditor("lab2_example.v", 117, 210); // ac
+selectCodeEditor("lab2_example.v", 140, 190); // ac
+selectCodeEditor("lab2_example.v", 140, 190, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 139, 227); // ac
+selectCodeEditor("lab2_example.v", 164, 274); // ac
+selectCodeEditor("lab2_example.v", 122, 269); // ac
+selectCodeEditor("lab2_example.v", 122, 269, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 157, 272); // ac
+// Elapsed time: 12 seconds
+selectCodeEditor("lab2_example.v", 290, 207, false, false, false, true, false); // ac - Popup Trigger
+selectCodeEditor("lab2_example.v", 163, 378, false, false, false, true, false); // ac - Popup Trigger
+selectCodeEditor("lab2_example.v", 163, 378); // ac
+selectCodeEditor("lab2_example.v", 80, 291); // ac
+// Elapsed time: 50 seconds
+selectCodeEditor("lab2_example.v", 199, 231); // ac
+selectCodeEditor("lab2_example.v", 242, 273); // ac
+selectCodeEditor("lab2_example.v", 226, 238); // ac
+selectCodeEditor("lab2_example.v", 226, 228); // ac
+selectCodeEditor("lab2_example.v", 214, 220); // ac
+selectCodeEditor("lab2_example.v", 256, 465); // ac
+// Elapsed time: 50 seconds
+selectCodeEditor("lab2_example.v", 924, 170); // ac
+// Elapsed time: 47 seconds
+selectCodeEditor("lab2_example.v", 456, 236); // ac
+selectCodeEditor("lab2_example.v", 311, 420); // ac
+selectCodeEditor("lab2_example.v", 175, 364); // ac
+selectCodeEditor("lab2_example.v", -5, 194, false, false, false, true, false); // ac - Popup Trigger
+selectCodeEditor("lab2_example.v", 652, 205); // ac
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("lab2_example.v", 518, 207); // ac
+selectCodeEditor("lab2_example.v", 412, 292); // ac
+selectCodeEditor("lab2_example.v", 617, 168); // ac
+// Elapsed time: 18 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 99 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 69 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // R
+// Elapsed time: 169 seconds
+selectCodeEditor("lab2_example.v", 192, 368); // ac
+selectCodeEditor("lab2_example.v", 192, 368, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 328, 324, false, false, false, true, false); // ac - Popup Trigger
+selectCodeEditor("lab2_example.v", 191, 286); // ac
+selectCodeEditor("lab2_example.v", 127, 162); // ac
+selectCodeEditor("lab2_example.v", 127, 162, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 128, 182); // ac
+selectCodeEditor("lab2_example.v", 127, 182, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 140 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o
+unMinimizeFrame(RDIResource.RDIViews_PROPERTIES, "Properties"); // R
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "lab2_example.v", 1); // o
+// Elapsed time: 165 seconds
+selectCodeEditor("lab2_example.v", 267, 235); // ac
+selectCodeEditor("lab2_example.v", 267, 235, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 244, 206); // ac
+selectCodeEditor("lab2_example.v", 244, 206, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 79, 295); // ac
+selectCodeEditor("lab2_example.v", 79, 295, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 260, 188); // ac
+selectCodeEditor("lab2_example.v", 260, 187, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 260, 187); // ac
+selectCodeEditor("lab2_example.v", 255, 174); // ac
+selectCodeEditor("lab2_example.v", 255, 174, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 413, 313); // ac
+// Elapsed time: 295 seconds
+selectButton(PAResourceOtoP.PlanAheadTab_SHOW_FLOW_NAVIGATOR, "Flow Navigator"); // A
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // f
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+dismissDialog("No Implementation Results Available"); // u
+selectComboBox(PAResourceItoN.NumJobsChooser_NUMBER_OF_JOBS, "12", 11); // d
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// 'cw' command handler elapsed time: 4 seconds
+dismissDialog("Launch Runs"); // cz
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 12 
+// Tcl Message: [Sun Sep  1 15:14:01 2024] Launched synth_1... Run output will be captured here: C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.runs/synth_1/runme.log [Sun Sep  1 15:14:01 2024] Launched impl_1... Run output will be captured here: C:/Users/Yicheng Zhou/OneDrive/Desktop/UIUC/ECE 437/Sensors-and-Instrumentation/Lab 2/Lab/FPGA/project_1/project_1.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Generate Bitstream"); // bq
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 331 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Bitstream Generation Completed"); // S.a
+// Elapsed time: 134 seconds
+selectCodeEditor("lab2_example.v", 470, 230); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,620 MB. GUI used memory: 71 MB. Current time: 9/1/24, 3:22:03 PM CDT
+// Elapsed time: 260 seconds
+selectCodeEditor("lab2_example.v", 76, 271); // ac
+selectCodeEditor("lab2_example.v", 76, 271, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 245 seconds
+selectCodeEditor("lab2_example.v", 105, 261); // ac
+selectCodeEditor("lab2_example.v", 105, 261, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 92 seconds
+selectCodeEditor("lab2_example.v", 292, 144); // ac
+selectCodeEditor("lab2_example.v", 63, 287); // ac
+// Elapsed time: 89 seconds
+selectCodeEditor("lab2_example.v", 94, 180); // ac
+selectCodeEditor("lab2_example.v", 94, 180, false, false, false, false, true); // ac - Double Click
+// Elapsed time: 19 seconds
+selectCodeEditor("lab2_example.v", 112, 215); // ac
+selectCodeEditor("lab2_example.v", 91, 205); // ac
+selectCodeEditor("lab2_example.v", 115, 205); // ac
+// Elapsed time: 50 seconds
+selectCodeEditor("lab2_example.v", 148, 219); // ac
+// Elapsed time: 65 seconds
+selectCodeEditor("lab2_example.v", 76, 314); // ac
+// Elapsed time: 98 seconds
+selectCodeEditor("lab2_example.v", 83, 235); // ac
+// Elapsed time: 37 seconds
+selectCodeEditor("lab2_example.v", 167, 242); // ac
+selectCodeEditor("lab2_example.v", 163, 292); // ac
+selectCodeEditor("lab2_example.v", 215, 206); // ac
+selectCodeEditor("lab2_example.v", 145, 220); // ac
+selectCodeEditor("lab2_example.v", 220, 304); // ac
+selectCodeEditor("lab2_example.v", 89, 267); // ac
+selectCodeEditor("lab2_example.v", 136, 203); // ac
+selectCodeEditor("lab2_example.v", 287, 274); // ac
+// Elapsed time: 15 seconds
+selectCodeEditor("lab2_example.v", 138, 224); // ac
+selectCodeEditor("lab2_example.v", 293, 241); // ac
+selectCodeEditor("lab2_example.v", 141, 303); // ac
+selectCodeEditor("lab2_example.v", 134, 213); // ac
+selectCodeEditor("lab2_example.v", 234, 256); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("lab2_example.v", 234, 282); // ac
+selectCodeEditor("lab2_example.v", 162, 366); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("lab2_example.v", 107, 163); // ac
+selectCodeEditor("lab2_example.v", 107, 163, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 82, 244); // ac
+selectCodeEditor("lab2_example.v", 304, 267); // ac
+selectCodeEditor("lab2_example.v", 317, 238); // ac
+selectCodeEditor("lab2_example.v", 114, 122); // ac
+selectCodeEditor("lab2_example.v", 174, 352); // ac
+selectCodeEditor("lab2_example.v", 174, 351, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "lab2_example.v", 'c'); // ac
+selectCodeEditor("lab2_example.v", 89, 202); // ac
+selectCodeEditor("lab2_example.v", 89, 202, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "lab2_example.v", 'v'); // ac
+selectCodeEditor("lab2_example.v", 286, 249); // ac
+selectCodeEditor("lab2_example.v", 255, 358); // ac
+selectCodeEditor("lab2_example.v", 206, 402); // ac
+selectCodeEditor("lab2_example.v", 261, 132); // ac
+selectCodeEditor("lab2_example.v", 394, 255); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("lab2_example.v", 192, 179); // ac
+selectCodeEditor("lab2_example.v", 145, 159); // ac
+// Elapsed time: 28 seconds
+selectCodeEditor("lab2_example.v", 130, 386); // ac
+selectCodeEditor("lab2_example.v", 342, 187); // ac
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("lab2_example.v", 247, 199); // ac
+selectCodeEditor("lab2_example.v", 266, 338); // ac
+selectCodeEditor("lab2_example.v", 264, 418); // ac
+// Elapsed time: 13 seconds
+selectCodeEditor("lab2_example.v", 80, 297); // ac
+selectCodeEditor("lab2_example.v", 47, 81); // ac
+typeControlKey((HResource) null, "lab2_example.v", 'c'); // ac
+selectCodeEditor("lab2_example.v", 49, 143); // ac
+typeControlKey((HResource) null, "lab2_example.v", 'v'); // ac
+selectCodeEditor("lab2_example.v", 219, 292); // ac
+// Elapsed time: 228 seconds
+selectCodeEditor("lab2_example.v", 75, 218); // ac
+selectCodeEditor("lab2_example.v", 92, 291); // ac
+selectCodeEditor("lab2_example.v", 99, 294); // ac
+// Elapsed time: 20 seconds
+typeControlKey(null, null, 'z');
+selectCodeEditor("lab2_example.v", 74, 390); // ac
+selectCodeEditor("lab2_example.v", 93, 242); // ac
+selectCodeEditor("lab2_example.v", 138, 280); // ac
+selectCodeEditor("lab2_example.v", 94, 240); // ac
+typeControlKey((HResource) null, "lab2_example.v", 'c'); // ac
+selectCodeEditor("lab2_example.v", 101, 293, false, false, false, true, false); // ac - Popup Trigger
+selectCodeEditor("lab2_example.v", 89, 293); // ac
+selectCodeEditor("lab2_example.v", 96, 293); // ac
+typeControlKey((HResource) null, "lab2_example.v", 'v'); // ac
+selectCodeEditor("lab2_example.v", 95, 294); // ac
+// Elapsed time: 13 seconds
+selectCodeEditor("lab2_example.v", 297, 271); // ac
+selectCodeEditor("lab2_example.v", 209, 336); // ac
+selectCodeEditor("lab2_example.v", 145, 298); // ac
+// Elapsed time: 62 seconds
+selectCodeEditor("lab2_example.v", 42, 237); // ac
+selectCodeEditor("lab2_example.v", 77, 241); // ac
+selectCodeEditor("lab2_example.v", 77, 241, false, false, false, false, true); // ac - Double Click
+selectCodeEditor("lab2_example.v", 397, 325); // ac
+// HMemoryUtils.trashcanNow. Engine heap size: 1,620 MB. GUI used memory: 97 MB. Current time: 9/1/24, 3:52:03 PM CDT
+// Elapsed time: 274 seconds
+selectCodeEditor("lab2_example.v", 86, 298); // ac
+selectCodeEditor("lab2_example.v", 61, 314); // ac
+selectCodeEditor("lab2_example.v", 196, 303); // ac
+selectCodeEditor("lab2_example.v", 118, 300); // ac
+selectCodeEditor("lab2_example.v", 118, 300, false, false, false, false, true); // ac - Double Click
+typeControlKey((HResource) null, "lab2_example.v", 'c'); // ac
+selectCodeEditor("lab2_example.v", 182, 255); // ac
+typeControlKey((HResource) null, "lab2_example.v", 'v'); // ac
+selectCodeEditor("lab2_example.v", 306, 306); // ac
+selectCodeEditor("lab2_example.v", 228, 272); // ac
+selectCodeEditor("lab2_example.v", 189, 332); // ac
+selectCodeEditor("lab2_example.v", 96, 326); // ac
+// Elapsed time: 10 seconds
+selectCodeEditor("lab2_example.v", 221, 330); // ac
+selectCodeEditor("lab2_example.v", 230, 334); // ac

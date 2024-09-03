@@ -10,7 +10,7 @@ module lab2_example(
         input   wire    reset,
         // Your signals go here
         input [3:0] button,
-        output [7:0] led
+        output reg [7:0] led
     );
        
     wire okClk;            //These are FrontPanel wires needed to IO communication    
@@ -21,6 +21,9 @@ module lab2_example(
     wire [31:0] variable_1, variable_2;      //signals that are outputs from a module must be wires
     wire [31:0] result_wire;                 //signals that go into modules can be wires or registers
     reg  [31:0] result_register;             //signals that go into modules can be wires or registers
+    
+    
+
     
     //This is the OK host that allows data to be sent or recived    
     okHost hostIF (
@@ -42,6 +45,7 @@ module lab2_example(
     // Clock
     wire clk;
     reg [31:0] clkdiv;
+    reg [31:0] div_var;
     reg slow_clk;
     reg [7:0] counter;
     
@@ -56,29 +60,58 @@ module lab2_example(
         slow_clk = 0;
     end
 
+    //ILA probes
+    ila_0 ila(
+        .clk(clk),
+        .probe0(variable_1),
+        .probe1(variable_2),
+        .probe2(result_wire),
+        .probe3(result_register)
+        );
+
     // This code creates a slow clock from the high speed Clk signal
     // You will use the slow clock to run your finite state machine
     // The slow clock is derived from the fast 200 MHz clock by dividing it 10,000,000 time and another 2x
     // Hence, the slow clock will run at 10 Hz
     always @(posedge clk) begin
         clkdiv <= clkdiv + 1'b1;
-        if (clkdiv == 10_000_000) begin
+        if (clkdiv == div_var) begin
             slow_clk <= ~slow_clk;
             clkdiv <= 0;
         end
     end
     
-    assign led = ~counter;
+    always @ (posedge clk) begin
+        div_var <= variable_2;
+        case (variable_1)
+            0 : begin
+                led <= {8{1'b1}};
+                end
+            1 : begin
+                led <= {8{1'b0}};
+                end
+            default: begin
+                led <= ~counter;
+                end
+            endcase 
+         end      
+    
+
     //The main code will run fr0m the slow clock.  The rest of the code will be in this section.  
     //The counter will decrement when button 0 is pressed and on the rising edge of the slow clk 
     //Otherwise the counter will increment
     always @(posedge slow_clk) begin       
-        if (button [0] == 1'b0) begin
-            counter <= counter - 1'b1;
-        end 
-        else begin
-            counter <= counter + 1'b1;
-        end 
+        case (variable_1)
+            2: begin
+                counter <= counter + 2;
+                end
+            3: begin
+                counter <= counter - 2;
+                end
+            default: begin
+                counter <= counter;
+                end
+            endcase                              
     end  
     
     //  variable_1 is a wire that contains data sent from the PC to FPGA.
@@ -108,7 +141,7 @@ module lab2_example(
     // Since we are using a register to store the result, we not need a clock signal and 
     // we will use an always statement examening the clock state   
     always @ (posedge(slow_clk)) begin
-        result_register = variable_1 - variable_2;
+        result_register = counter;
     end
     
     // result_wire is transmited to the PC via address 0x21                         
