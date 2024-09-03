@@ -17,7 +17,7 @@ import ok     # OpalKelly library
 # load the bit file in the FPGA
 dev = ok.okCFrontPanel()  # define a device for FrontPanel communication
 SerialStatus=dev.OpenBySerial("")      # open USB communication with the OK board
-ConfigStatus=dev.ConfigureFPGA("lab2.bit"); # Configure the FPGA with this bit file
+ConfigStatus=dev.ConfigureFPGA("../FPGA/bit/lab2_example.bit"); # Configure the FPGA with this bit file
 
 # Check if FrontPanel is initialized correctly and if the bit file is loaded.
 # Otherwise terminate the program
@@ -39,8 +39,8 @@ print("----------------------------------------------------")
 print("----------------------------------------------------")
 #%% 
 control_variable = 2; # control_variable is initialized to digital number 2
-clock_divider = 50000000; # # clock_divider is initialized to digital number 10000000
-for i in range(100):
+clock_divider = 10000000; # # clock_divider is initialized to digital number 10000000
+while(True):
     dev.UpdateWireOuts()
     counter = dev.GetWireOutValue(0x21)  # Transfer the received data in result_sum variable
     # result_difference = dev.GetWireOutValue(0x21)  # Transfer the received data in result_difference variable
@@ -51,15 +51,29 @@ for i in range(100):
     if counter >= 100:
         print("control_variable is initialized to " + str(5))
         dev.SetWireInValue(0x00, 5) #Input data for Variable 1 using memory space 0x00
+        dev.UpdateWireIns()  # Update the WireIns
+        time.sleep(0.5)
+
     else:
         print("control_variable is initialized to " + str(int(control_variable)))
         dev.SetWireInValue(0x00, control_variable) #Input data for Variable 1 using memory space 0x00
     dev.SetWireInValue(0x01, clock_divider) #Input data for Variable 2 using memory space 0x01
     dev.UpdateWireIns()  # Update the WireIns
     #control_variable = (control_variable + 1) % 4
-    time.sleep(0.5)                 
+    time.sleep(0.05)
+
+while(True):
+    counter = dev.GetWireOutValue(0x21)
+    if 80 < counter < 90:
+        break
+    else:
+        print("The counter value is " + str(int(counter)))
+    time.sleep(0.05)    
 control_variable = 3
-for i in range(100):
+
+
+
+while(True):
     dev.UpdateWireOuts()
     counter = dev.GetWireOutValue(0x21)  # Transfer the received data in result_sum variable
     # result_difference = dev.GetWireOutValue(0x21)  # Transfer the received data in result_difference variable
@@ -70,13 +84,15 @@ for i in range(100):
     if counter >= 100:
         print("control_variable is initialized to " + str(5))
         dev.SetWireInValue(0x00, 5) #Input data for Variable 1 using memory space 0x00
+    if counter == 0:
+        break
     else:
         print("control_variable is initialized to " + str(int(control_variable)))
         dev.SetWireInValue(0x00, control_variable) #Input data for Variable 1 using memory space 0x00
     dev.SetWireInValue(0x01, clock_divider) #Input data for Variable 2 using memory space 0x01
     dev.UpdateWireIns()  # Update the WireIns
     #control_variable = (control_variable + 1) % 4
-    time.sleep(0.5)                 
+    time.sleep(0.01)                 
     
 
 
