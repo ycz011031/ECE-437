@@ -9,15 +9,13 @@ module lab3_example(
     input sys_clkp  
     );
 
-    reg [3:0] state = 0;
-    reg [7:0] led_register = 0; //R1, Y1, G1, R2, Y2, G2, R3, G3.
-    reg [27:0] counter = 0;
-    reg cross;
-    wire pedestrian;
+    
+    wire [31:0]     pedestrian;
     wire okClk;            //These are FrontPanel wires needed to IO communication    
     wire [112:0]    okHE;  //These are FrontPanel wires needed to IO communication    
     wire [64:0]     okEH;  //These are FrontPanel wires needed to IO communication           
     wire clk;
+    
     
     IBUFGDS osc_clk(
         .O(clk),
@@ -43,127 +41,10 @@ module lab3_example(
                         .ep_addr(8'h00), 
                         .ep_dataout(pedestrian));
                         
-    assign led = ~led_register; //map led wire to led_register
-    localparam STATE_Y1      = 3'd1;
-    localparam STATE_G1      = 3'd2;
-    localparam STATE_Y2      = 3'd3;
-    localparam STATE_G2      = 3'd4;
-    localparam STATE_PE1     = 3'd5;
-    localparam STATE_PE2     = 3'd6;
+    FSM FSM(.clk(clk),
+            .pedestrian(pedestrian),
+            .led(led));
 
-    always @(posedge clk)
-    begin       
-        case (state)
-            STATE_G1 : begin
-                if (counter >= 100000000)
-                begin
-                     state <= STATE_Y1;
-                     counter <= 0;
-                end
-                else if (pedestrian)
-                begin
-                    cross <= 1;
-                    led_register <= 8'b00110010;
-                    counter <= counter + 1;
-                end
-                else 
-                begin
-                    led_register <= 8'b00110010;
-                    counter <= counter + 1;
-                end
-            end
-            STATE_Y1 : begin
-                if (counter >= 50000000 && cross)
-                begin
-                    state <= STATE_PE1;
-                    counter <= 0;
-                    cross <= 0;
-                end
-                else if (counter >= 50000000) 
-                begin
-                    state <= STATE_G2;
-                    counter <= 0;
-                end
-                else if (pedestrian)
-                begin
-                    cross <= 1;
-                    led_register <= 8'b01010010;
-                    counter <= counter + 1;
-                end
-                else 
-                begin
-                    led_register <= 8'b01010010;
-                    counter <= counter + 1;
-                end
-            end
-            STATE_G2 : begin
-                if (counter >= 100000000)
-                begin
-                     state <= STATE_Y2;
-                     counter <= 0;
-                end
-                else if (pedestrian)
-                begin
-                    cross <= 1;
-                    led_register <= 8'b10000110;
-                    counter <= counter + 1;
-                end
-                else 
-                begin
-                    led_register <= 8'b10000110;
-                    counter <= counter + 1;
-                end
-            end
-            STATE_Y2 : begin
-                if (counter >= 50000000 && cross)
-                begin
-                    state <= STATE_PE2;
-                    counter <= 0;
-                    cross <= 0;
-                end
-                else if (counter >= 50000000) 
-                begin
-                    state <= STATE_G2;
-                    counter <= 0;
-                end
-                else if (pedestrian)
-                begin
-                    cross <= 1;
-                    led_register <= 8'b10001010;
-                    counter <= counter + 1;
-                end
-                else 
-                begin
-                    led_register <= 8'b10001010;
-                    counter <= counter + 1;
-                end                                                                    
-            end
-            STATE_PE1 : begin
-                if (counter >= 100000000)
-                begin
-                     state <= STATE_G2;
-                     counter <= 0;
-                end
-                else 
-                begin
-                    led_register <= 8'b10010001;
-                    counter <= counter + 1;
-                end                                                                 
-            end
-            STATE_PE2 : begin
-                if (counter >= 100000000)
-                begin
-                     state <= STATE_G1;
-                     counter <= 0;
-                end
-                else 
-                begin
-                    led_register <= 8'b10010001;
-                    counter <= counter + 1;
-                end                                                                           
-            end
-            default: state <= STATE_G1;
-        endcase
-    end
+    
 endmodule
 
