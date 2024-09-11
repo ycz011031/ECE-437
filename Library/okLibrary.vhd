@@ -2,7 +2,7 @@
 --okLibrary.vhd 
 --
 --FrontPanel Library Module Declarations (VHDL)
--- XEM7310MT
+-- XEM7310
 --
 -- Copyright (c) 2004-2022 Opal Kelly Incorporated
 -- $Rev: 980 $ $Date: 2011-08-19 14:17:52 -0500 (Fri, 19 Aug 2011) $
