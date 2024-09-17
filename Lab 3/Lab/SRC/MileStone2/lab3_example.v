@@ -15,8 +15,7 @@ module lab3_example(
     wire [112:0]    okHE;  //These are FrontPanel wires needed to IO communication    
     wire [64:0]     okEH;  //These are FrontPanel wires needed to IO communication           
     wire clk;
-    
-    
+    wire[31:0] temp;
     IBUFGDS osc_clk(
         .O(clk),
         .I(sys_clkp),

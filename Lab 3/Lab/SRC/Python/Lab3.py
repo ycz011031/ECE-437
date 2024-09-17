@@ -8,7 +8,7 @@ import ok     # OpalKelly library
 
 dev = ok.okCFrontPanel()  # define a device for FrontPanel communication
 SerialStatus=dev.OpenBySerial("")      # open USB communication with the OK board
-ConfigStatus=dev.ConfigureFPGA("../FPGA/bit/lab2_example.bit"); # Configure the FPGA with this bit file
+ConfigStatus=dev.ConfigureFPGA("lab3_example.bit"); # Configure the FPGA with this bit file
 print("----------------------------------------------------")
 
 
@@ -33,7 +33,8 @@ while(True):
     dev.UpdateWireIns()
     input("Press Enter to Generate Pedestrian button press")
     dev.SetWireInValue(0x00,1)
-    dev.Update_WireIns()
+    dev.UpdateWireIns()
+    time.sleep(0.5)
 
 
     
