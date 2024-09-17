@@ -21,7 +21,27 @@ module lab3_example(
     localparam STATE_INIT       = 2'd0;
     localparam STATE_ALPHA      = 2'd1;
     localparam STATE_BRAVO      = 2'd2;
-    localparam STATE_CHARLIE    = 2'd3;                 
+    localparam STATE_CHARLIE    = 2'd3;
+    
+    wire a;
+    reg b,c,d;
+    reg test;
+    
+    initial begin
+        d <= 0;
+        test <= 1;
+    end    
+    
+    assign a = test;
+    always @(posedge clk)
+    begin
+        b = a;
+        c = b;
+        d <= c;
+        test <= test+1;
+    end
+        
+                     
       
     always @(posedge clk)
     begin       
