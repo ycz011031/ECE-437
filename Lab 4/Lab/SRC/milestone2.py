@@ -41,11 +41,11 @@ for i in range (0, number_of_device):
             power_supply_id = i
         if (device_temp.query("*IDN?") == 'Agilent Technologies,33511B,MY52301259,3.03-1.19-2.00-52-00\n'):
             waveform_generator_id = i
-        if (device_temp.query("*IDN?") == 'Agilent Technologies,34461A,MY53207889,A.01.10-02.25-01.10-00.35-01-01\n'):
+        if (device_temp.query("*IDN?") == 'Agilent Technologies,34461A,MY53207918,A.01.10-02.25-01.10-00.35-01-01\n'):
             digital_multimeter_id = i 
         if (device_temp.query("*IDN?") == 'Keysight Technologies,34461A,MY53212931,A.02.08-02.37-02.08-00.49-01-01\n'):
             digital_multimeter_id = i            
-        if (device_temp.query("*IDN?") == 'KEYSIGHT TECHNOLOGIES,MSO-X 3024T,MY55100351,07.50.2021102830\n'):
+        if (device_temp.query("*IDN?") == 'KEYSIGHT TECHNOLOGIES,MSO-X 3024T,MY55100352,07.50.2021102830\n'):
             oscilloscope_id = i                        
         device_temp.close()
     except:
@@ -97,7 +97,7 @@ else:
 # If the power supply reaches its maximum allowed current, 
 # then the applied voltage will not be the same as the measured voltage.
 
-    output_voltage = np.arange(0, 8, 0.2)
+    output_voltage = np.arange(0, 8, 0.1)
     measured_voltage = np.array([]) # create an empty list to hold our values
     measured_current = np.array([]) # create an empty list to hold our values
 
@@ -114,7 +114,7 @@ else:
         time.sleep(0.5)
     
         # read the output voltage on the 6V power supply
-        measured_voltage_tmp = oscilloscope.query(":MEASure:VAVerage?")
+        measured_voltage_tmp = oscilloscope.query("MEASure:VAVERAGE? DISPLAY, CHANNEL1")
         measured_voltage = np.append(measured_voltage, measured_voltage_tmp)
 
         # read the output current on the 6V power supply
