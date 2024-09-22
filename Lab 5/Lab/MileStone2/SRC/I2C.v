@@ -82,7 +82,7 @@ module I2C_driver(
             idle_ : begin
                 if (next_step == 2'b01)begin
                      State <= start_;
-                     clk_couner <= 10'd400;
+                     clk_counter <= 10'd400;
                      bit_counter <= 0;
                 end
             end
@@ -159,15 +159,20 @@ module I2C_driver(
                         case (next_step)
                             2'b00: begin
                                 State <= end_;
+                                ready <= 1'b1;
                             end
                             2'b01: begin
                                 State <= start_;
+                                ready <= 1'b0;
                             end
                             2'b10: begin
                                 State <= tx;
+                                tx_byte_reg <= tx_byte;
+                                ready <= 1'b0;
                             end    
                             2'b11: begin
-                                State <= rx;             
+                                State <= rx;
+                                ready <= 1'b0;             
                             end
                         endcase
                         clk_counter <= 10'd0;
@@ -178,6 +183,102 @@ module I2C_driver(
                 endcase
             end
         
+        rx: begin
+            case (clk_counter)
+                10'd0 : begin
+                    SCL <= 1'b0;
+                    SDA <= 1'bz;
+                    clk_counter <= clk_counter + 1;
+                end
+                10'd400 : begin
+                    SCL <= 1'b1;
+                    clk_counter <= clk_counter + 1;
+                end
+                10'd500 : begin
+                    rx_byte_reg[bit_counter] <= SDA;
+                    clk_counter <= clk_counter + 1;
+                end
+                10'd799 : begin
+                    if (bit_counter == 3'd7) begin
+                        State <= rx_ack;
+                        bit_counter <= 3'd0;
+                    end else begin
+                        bit_counter <= bit_counter + 1;
+                    end
+                    clk_counter <= 10'd0;
+                end
+                default : begin
+                    clk_counter <= clk_counter + 1;
+                end
+            endcase
+        end            
+        
+        rx_ack : begin
+            case (clk_counter)
+                10'd0 : begin
+                    SCL <= 1'b0;
+                    clk_counter <= clk_counter + 1;
+                end
+                10'd200: begin
+                    SDA <= tx_byte_reg[0];
+                    clk_counter <= clk_counter + 1;
+                end
+                10'd400 : begin
+                    SCL <= 1'b1;
+                    clk_counter <= clk_counter + 1;
+                end            
+                10'd799 : begin
+                    clk_counter <= 10'd0;
+                    case (next_step)
+                            2'b00: begin
+                                State <= end_;
+                                ready <= 1'b1;
+                            end
+                            2'b01: begin
+                                State <= start_;
+                                ready <= 1'b0;
+                            end
+                            2'b10: begin
+                                State <= tx;
+                                tx_byte_reg <= tx_byte;
+                                ready <= 1'b0;
+                            end    
+                            2'b11: begin
+                                State <= rx;
+                                ready <= 1'b0;             
+                            end
+                    endcase    
+                end
+                default : begin
+                    clk_counter <= clk_counter + 1;
+                end    
+            endcase
+        end
+        
+        end_ : begin
+            case (clk_counter)
+                10'd0: begin
+                    SCL <= 1'b0;
+                    SDA <= 1'b0;
+                    clk_counter <= clk_counter + 1;
+                end
+                10'd400: begin
+                    SCL <= 1'b1;
+                    SDA <= 1'b0;
+                    clk_counter <= clk_counter + 1;
+                end       
+                10'd600 : begin
+                    SCL <= 1'b1;
+                    SDA <= 1'b1;
+                    clk_counter <= 10'd0;
+                    State <= idle_;
+                end
+                default : begin
+                    clk_counter <= clk_counter + 1;
+                end
+            endcase
+        end    
+                              
         default : begin
             error <= 1'b1;
         end
