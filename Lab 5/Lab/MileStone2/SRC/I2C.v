@@ -159,20 +159,16 @@ module I2C_driver(
                         case (next_step)
                             2'b00: begin
                                 State <= end_;
-                                ready <= 1'b1;
                             end
                             2'b01: begin
                                 State <= start_;
-                                ready <= 1'b0;
                             end
                             2'b10: begin
                                 State <= tx;
                                 tx_byte_reg <= tx_byte;
-                                ready <= 1'b0;
                             end    
                             2'b11: begin
-                                State <= rx;
-                                ready <= 1'b0;             
+                                State <= rx;          
                             end
                         endcase
                         clk_counter <= 10'd0;
@@ -232,20 +228,16 @@ module I2C_driver(
                     case (next_step)
                             2'b00: begin
                                 State <= end_;
-                                ready <= 1'b1;
                             end
                             2'b01: begin
                                 State <= start_;
-                                ready <= 1'b0;
                             end
                             2'b10: begin
                                 State <= tx;
                                 tx_byte_reg <= tx_byte;
-                                ready <= 1'b0;
                             end    
                             2'b11: begin
-                                State <= rx;
-                                ready <= 1'b0;             
+                                State <= rx;           
                             end
                     endcase    
                 end
@@ -277,13 +269,21 @@ module I2C_driver(
                     clk_counter <= clk_counter + 1;
                 end
             endcase
-        end    
+         end    
                               
-        default : begin
+         default : begin
             error <= 1'b1;
-        end
-     endcase
-end         
+         end
+       endcase
+    end
+
+    always @(posedge clk) begin
+        case (State)
+            tx : ready <= 1'b0;
+            rx : ready <= 1'b0;
+            default : ready <=1'b1;
+         endcase
+    end         
         
         
 endmodule
