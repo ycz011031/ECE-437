@@ -35,7 +35,7 @@ module I2C_driver(
     output reg [5:0] State,
     input  wire [7:0] tx_byte,
     output reg [7:0] rx_byte,
-    input  wire [2:0] next_step,
+    input  wire [1:0] next_step,
     output reg ready
     );
     
