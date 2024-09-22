@@ -122,7 +122,7 @@ module TS_controller(
                         end
                         1'b1: begin
                             byte2_flag <= 1'b0;
-                            for (i=0; i<5; i = 1+1) begin
+                            for (i=0; i<5; i = i+1) begin
                                 PC_tx_reg[4-i] <= rx_byte_reg[7-i];
                             end
                             cur_state <= end_rt;
