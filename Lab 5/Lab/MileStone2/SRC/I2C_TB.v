@@ -62,8 +62,9 @@ module I2C_TB();
     
     initial begin
         #0 tx_byte <= 8'd255;
-        #0 next_step <= 2'b01;
-        #400 next_step <= 2'b10;
+        #0 next_step <= 2'b01;  //start
+        #400 next_step <= 2'b10;    //tx
+        
     end     
     
 
