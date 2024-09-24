@@ -109,6 +109,7 @@ module Main(
     
     //Instantiate the ILA module
     ila_0 ila_sample12 ( 
-        .clk(ILA_Clk),
-        .probe0({State, SDA, SCL, ACK}));                        
+        .clk(clk),
+        .probe0({State, SDA, SCL, ACK}),
+        .probe1(next_step));                        
 endmodule

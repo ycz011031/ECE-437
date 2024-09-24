@@ -65,6 +65,7 @@ module TS_controller(
         tx_byte_reg <= 0;
         rx_byte_reg <= 0;
         byte2_flag  <= 1'b0;
+        ready_reg <= 1'b1;
     end
     
     integer i;
@@ -117,7 +118,7 @@ module TS_controller(
                         1'b0: begin
                             byte2_flag <= 1'b1;
                             for (i=0; i<8; i =i+1) begin
-                                PC_tx_reg[13-i] <= rx_byte_reg[7-i];
+                                PC_tx_reg[12-i] <= rx_byte_reg[7-i];
                             end
                         end
                         1'b1: begin

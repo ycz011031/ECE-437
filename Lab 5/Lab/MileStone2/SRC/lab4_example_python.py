@@ -32,19 +32,21 @@ else:
 #%% 
 # Define the two variables that will send data to the FPGA
 # We will use WireIn instructions to send data to the FPGA
-PC_Control = 1; # send a "go" signal to the FSM
-dev.SetWireInValue(0x00, PC_Control) 
+dev.SetWireInValue(0x00, 0) 
+dev.UpdateWireIns()  # Update the WireIns
+time.sleep(1)
+dev.SetWireInValue(0x00, 1) 
 dev.UpdateWireIns()  # Update the WireIns
 print("Send GO signal to the FSM") 
 #%% 
 # Since we are using a slow clock on the FPGA to compute the results
 # we need to wait for the result to be computed
-time.sleep(0.5)                 
+time.sleep(1)                 
 
 dev.UpdateWireOuts()
 temp_read = dev.GetWireOutValue(0x20)
 
-print("temp read is" + temp_read/16)
+print("temp read is " + str(temp_read/16))
 #PC_Control = 0; # send a "stop" signal to the FSM
 #dev.SetWireInValue(0x00, PC_Control) 
 #dev.UpdateWireIns()  # Update the WireIns
