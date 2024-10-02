@@ -73,11 +73,11 @@ for i in range (0, number_of_device):
             power_supply_id = i
         if (device_temp.query("*IDN?") == 'Agilent Technologies,33511B,MY52301259,3.03-1.19-2.00-52-00\n'):
             waveform_generator_id = i
-        if (device_temp.query("*IDN?") == 'Agilent Technologies,34461A,MY53207905,A.01.10-02.25-01.10-00.35-01-01\n'):
+        if (device_temp.query("*IDN?") == 'Agilent Technologies,34461A,MY53208026,A.01.10-02.25-01.10-00.35-01-01\n'):
             digital_multimeter_id = i 
         if (device_temp.query("*IDN?") == 'Keysight Technologies,34461A,MY53212931,A.02.08-02.37-02.08-00.49-01-01\n'):
             digital_multimeter_id = i
-        if (device_temp.query("*IDN?") == 'KEYSIGHT TECHNOLOGIES,MSO-X 3024T,MY54440281,07.50.2021102830\n'):
+        if (device_temp.query("*IDN?") == 'KEYSIGHT TECHNOLOGIES,MSO-X 3024T,MY54440318,07.50.2021102830\n'):
             oscilloscope_id = i
         device_temp.close()
     except:
@@ -123,34 +123,40 @@ else:
 print(power_supply.write("OUTPUT ON"))
 output_voltage = np.arange(0, 5, 0.5)
 measured_voltage = np.array([]) # create an empty list to hold our values
-measured_current = np.array([]) # create an empty list to hold our values
-measured_power_mean = np.array([])
-measured_power_std = np.array([])
+measured_temp_mean = np.array([])
+measured_temp_std = np.array([])
+#measured_current = np.array([]) # create an empty list to hold our values
+#measured_power_mean = np.array([])
+#measured_power_std = np.array([])
 try:
     for v in output_voltage:    
         power_supply.write("APPLy P25V, %0.2f, 0.1" % v)
         time.sleep(0.5)
-        same_volt_power_measurement = np.array([])
-        same_volt_voltage_measurement = np.array([])
-        same_volt_current_measurement = np.array([])
-
-        for i in range(20):
-            measured_voltage_tmp = power_supply.query("MEASure:VOLTage:DC? P25V")
+        same_volt_temp_measurement = np.array([])
+#        same_volt_voltage_measurement = np.array([])
+#        same_volt_current_measurement = np.array([])
+        measured_voltage_tmp = oscilloscope.query("MEASure:VAVERAGE? DISPLAY, CHANNEL1")
+        measured_voltage = np.append(measured_voltage, measured_voltage_tmp)
             # read the output current on the 6V power supply
-            measured_current_tmp = digital_multimeter.query("MEASure:CURRent:DC?")
-#            measured_current = np.append(measured_current, measured_current_tmp)
-            power_consumption = measured_voltage_tmp * measured_current_tmp
-            if power_consumption > 0.5:
-                print("Exceeding 0.5W")
-                break
-            same_volt_power_measurement.append(same_volt_power_measurement, measured_voltage_tmp)
-            same_volt_voltage_measurement.append(same_volt_voltage_measurement, measured_current_tmp)
-            same_volt_current_measurement.append(same_volt_current_measurement, power_consumption)
+#        measured_current_tmp = digital_multimeter.query("MEASure:CURRent:DC?")
+#        measured_current = np.append(measured_current, measured_current_tmp)
+        for i in range(20):
+            dev.SetWireInValue(0x00, 1); # Sending 1 at memory location 0x00 starts the FSM
+            dev.UpdateWireIns();  # Update the WireIns    
             time.sleep(0.5)
-         measured_power_mean = np.append(measured_power_mean, np.mean(same_volt_power_measurement))
-         measured_power_std = np.append(measured_power_mean, np.std(same_volt_power_measurement))
-         measured_voltage = np.append(measured_voltage, measured_voltage_tmp)
-         measured_current = np.append(measured_current, measured_current_tmp)
+            dev.UpdateWireOuts()  # Receive the temperature data
+            temperature_msb = dev.GetWireOutValue(0x20)  # MSB temperature register
+            temperature_lsb = dev.GetWireOutValue(0x21)  # LSB temperature register
+            temperature = float(((temperature_msb<<8) + temperature_lsb))/8*0.0625; # Put the temperature data together
+            same_volt_temp_measurement = np.append(same_volt_temp_measurement, temperature)
+            time.sleep(0.5);        
+            print ("Temperature is:" + str((temperature))); # print the results
+        measured_temp_mean = np.append(measured_temp_mean, np.mean(same_volt_temp_measurement))
+        measured_temp_std = np.append(measured_temp_std, np.std(same_volt_temp_measurement))
+#         measured_voltage_mean = np.append(measured_voltage, np.mean(same_volt_voltage_measurement))
+#         measured_voltage_std = np.append(measured_voltage, np.std(same_volt_voltage_measurement))
+#         measured_current_mean = np.append(measured_current, np.mean(same_volt_current_measurement))
+#         measured_current_std = np.append(measured_current, np.std(same_volt_current_measurement))
 #        dev.SetWireInValue(0x00, 1); # Sending 1 at memory location 0x00 starts the FSM
 #        dev.UpdateWireIns();  # Update the WireIns    
 #        time.sleep(0.5)
@@ -166,30 +172,37 @@ except KeyboardInterrupt:
 print(power_supply.write("OUTPUT OFF"))
 
 #%% Plot measured data. First convert the data from strings to numbers (ie floats)
-power_mean_list = np.zeros(np.size(measured_power_mean))
-power_std_list = np.zeros(np.size(measured_power_std))
+#power_mean_list = np.zeros(np.size(measured_power_mean))
+#power_std_list = np.zeros(np.size(measured_power_std))
 voltage_list=np.zeros(np.size(output_voltage))
-current_list=np.zeros(np.size(output_voltage))
+temp_mean_list=np.zeros(np.size(output_voltage))
+temp_std_list=np.zeros(np.size(output_voltage))
 for i in range(len(measured_voltage)):
     voltage_list[i]= float(measured_voltage [i])
-    current_list[i]= float(measured_current[i])
-    power_mean_list[i] = float(measured_power_mean[i])
-    power_std_list[i] = float(measured_power_std[i])
+    temp_mean_list[i] = float(measured_temp_mean[i])
+    temp_std_list[i] = float(measured_temp_std[i])
    
 # plot results (applied voltage vs measured supplied current)
 plt.figure()
-plt.plot(output_voltage, current_list)
-plt.title("Applied Volts vs. Measured Supplied Current for resistor")
+plt.plot(output_voltage, temp_mean_list)
+plt.title("Applied Volts vs. Measured Temperature mean")
 plt.xlabel("Applied Volts [V]")
-plt.ylabel("Measured Current [A]")
+plt.ylabel("Temperature Mean [C]")
 plt.draw()
 # plot results (applied voltage vs measured supplied current)
 plt.figure()
-plt.plot(output_voltage, current_list)
-plt.title("Applied Volts vs. Measured Supplied Current for resistor")
+plt.plot(output_voltage, temp_std_list)
+plt.title("Applied Volts vs. Measured Temperature Std")
 plt.xlabel("Applied Volts [V]")
-plt.ylabel("Measured Current [A]")
+plt.ylabel("Temperature Std [C]")
 plt.draw()
+# plot results (applied voltage vs measured supplied current)
+#plt.figure()
+#plt.plot(output_voltage, current_list)
+#plt.title("Applied Volts vs. Measured Supplied Current for resistor")
+#plt.xlabel("Applied Volts [V]")
+#plt.ylabel("Measured Current [A]")
+#plt.draw()
 # plot results (measured voltage vs measured supplied current)
 #plt.figure()
 #plt.plot(voltage_list, current_list)
