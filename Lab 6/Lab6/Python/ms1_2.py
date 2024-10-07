@@ -161,16 +161,6 @@ try:
         measured_voltage_std = np.append(measured_voltage_std, np.std(same_volt_voltage_measurement))
         measured_current_mean = np.append(measured_current_mean, np.mean(same_volt_current_measurement))
         measured_current_std = np.append(measured_current_std, np.std(same_volt_current_measurement))
-#        dev.SetWireInValue(0x00, 1); # Sending 1 at memory location 0x00 starts the FSM
-#        dev.UpdateWireIns();  # Update the WireIns    
-#        time.sleep(0.5)
-#        dev.UpdateWireOuts()  # Receive the temperature data
-#        temperature_msb = dev.GetWireOutValue(0x20)  # MSB temperature register
-#        temperature_lsb = dev.GetWireOutValue(0x21)  # LSB temperature register
-#        
-#        temperature = float(((temperature_msb<<8) + temperature_lsb))/8*0.0625; # Put the temperature data together
-#        time.sleep(0.5);        
-#        print ("Temperature is:" + str((temperature))); # print the results
 except KeyboardInterrupt:
     pass
 print(power_supply.write("OUTPUT OFF"))
@@ -232,19 +222,4 @@ plt.title("Applied Volts vs. measured power std for resistor")
 plt.xlabel("Applied Volts [V]")
 plt.ylabel("Measured Power Mean [W]")
 plt.draw()
-# plot results (applied voltage vs measured supplied current)
-#plt.figure()
-#plt.plot(output_voltage, current_list)
-#plt.title("Applied Volts vs. Measured Supplied Current for resistor")
-#plt.xlabel("Applied Volts [V]")
-#plt.ylabel("Measured Current [A]")
-#plt.draw()
-# plot results (measured voltage vs measured supplied current)
-#plt.figure()
-#plt.plot(voltage_list, current_list)
-#plt.title("Measured Voltage vs. Measured Supplied Current for Diode")
-#plt.xlabel("Measured Voltage [V]")
-#plt.ylabel("Measured Current [A]")
-#plt.draw()
-# show all plots
 plt.show()
