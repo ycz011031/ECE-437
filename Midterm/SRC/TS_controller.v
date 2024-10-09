@@ -24,8 +24,9 @@ module TS_controller(
     input clk,
     
     input wire [31:0] PC_rx,
+    input wire [31:0] PC_addr,
+    input wire [31:0] PC_val,
     output reg [31:0] PC_tx,
-     
     output reg [1:0] next_step,
     output reg [7:0] tx_byte,
     input wire [7:0] rx_byte,
@@ -56,11 +57,13 @@ module TS_controller(
     localparam ns_rx     = 2'b11;
     localparam ns_end    = 2'b00;
     
-    localparam device_addr_wr = 8'b00110010;
-    localparam device_addr_rd = 8'b00110011;
-    localparam crl_reg_addr = 8'b00100000;
-    localparam crl_reg_val = 8'b00110111;
-    localparam accele_reg_addr  = 8'b10101000; 
+    localparam linear_addr_wr = 8'b00110010;
+    localparam linear_addr_rd = 8'b00110011;
+    localparam magnet_addr_wr = 8'b00111100;
+    localparam magnet_addr_rd = 8'b00111101;
+    //localparam crl_reg_addr = 8'b00100000;
+    //localparam crl_reg_val = 8'b00110111;     
+    //localparam accele_reg_addr  = 8'b10101001; 
     
     initial begin
         cur_state <= idle_;
@@ -96,7 +99,7 @@ module TS_controller(
             end
             start_wr: begin
                 ready_reg <= ready;
-                tx_byte_reg <= device_addr_wr;
+                tx_byte_reg <= linear_addr_wr;
                 next_step <= ns_start;                
                 if (ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= tx_wr;
@@ -106,7 +109,7 @@ module TS_controller(
                 case (tx_flag)
                     1'b0: begin
                         ready_reg <= ready;
-                        tx_byte_reg <= crl_reg_addr;
+                        tx_byte_reg <= PC_addr;
                         next_step <= ns_tx;
                         if(ready_reg == 1'b0 && ready == 1'b1) begin
                             tx_flag <= 1'b1;
@@ -114,7 +117,7 @@ module TS_controller(
                     end
                     1'b1: begin
                         ready_reg <= ready;
-                        tx_byte_reg <= crl_reg_val;
+                        tx_byte_reg <= PC_val;
                         next_step <= ns_tx;
                         if(ready_reg == 1'b0 && ready == 1'b1) begin
                             cur_state <= end_wr;
@@ -130,7 +133,7 @@ module TS_controller(
             end
             start_rt: begin
                 ready_reg <= ready;
-                tx_byte_reg <= device_addr_wr;
+                tx_byte_reg <= linear_addr_wr;
                 next_step <= ns_start;                
                 if (ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= tx_rt;
@@ -138,7 +141,7 @@ module TS_controller(
             end
             tx_rt: begin
                 ready_reg <= ready;
-                tx_byte_reg <= accele_reg_addr;
+                tx_byte_reg <= PC_addr;
                 next_step <= ns_tx;
                 if(ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= rstart_rt;
@@ -146,7 +149,7 @@ module TS_controller(
             end
             rstart_rt : begin
                 ready_reg <= ready;
-                tx_byte_reg <= device_addr_rd;
+                tx_byte_reg <= linear_addr_rd;
                 next_step <= ns_start;
                 if (ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= rx_rt;

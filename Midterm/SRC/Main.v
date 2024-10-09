@@ -40,6 +40,8 @@ module Main(
     // TODO verify OK communication function
     wire [31:0]     PC_rx;
     wire [31:0]     PC_tx;
+    wire [31:0]     PC_addr;
+    wire [31:0]     PC_val;
     wire [112:0]    okHE;   
     wire [64:0]     okEH;     
     localparam  endPt_count = 2;
@@ -58,6 +60,12 @@ module Main(
     okWireIn wire10 (   .okHE(okHE), 
                         .ep_addr(8'h00), 
                         .ep_dataout(PC_rx));
+    okWireIn wire11 (   .okHE(okHE), 
+                        .ep_addr(8'h01), 
+                        .ep_dataout(PC_addr));
+    okWireIn wire12 (   .okHE(okHE), 
+                        .ep_addr(8'h02), 
+                        .ep_dataout(PC_val));
     okWireOut wire20 (  .okHE(okHE), 
                         .okEH(okEHx[ 0*65 +: 65 ]),
                         .ep_addr(8'h20), 
@@ -98,6 +106,8 @@ module Main(
         .clk(clk),
         .PC_rx(PC_rx),
         .PC_tx(PC_tx),
+        .PC_addr(PC_addr),
+        .PC_val(PC_val),
         .next_step(next_step),
         .tx_byte(tx_byte),
         .rx_byte(rx_byte),

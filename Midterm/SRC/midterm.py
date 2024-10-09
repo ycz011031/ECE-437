@@ -32,11 +32,11 @@ else:
 #%% 
 # Define the two variables that will send data to the FPGA
 # We will use WireIn instructions to send data to the FPGA
-#dev.SetWireInValue(0x00, 0) 
-#dev.UpdateWireIns()  # Update the WireIns
-#time.sleep(1)
-#dev.SetWireInValue(0x00, 1) 
-#dev.UpdateWireIns()  # Update the WireIns
+dev.SetWireInValue(0x00, 0) 
+dev.UpdateWireIns()  # Update the WireIns
+time.sleep(1)
+dev.SetWireInValue(0x00, 1) 
+dev.UpdateWireIns()  # Update the WireIns
 while True:
 
     print("Send GO signal to the FSM") 
@@ -51,9 +51,9 @@ while True:
     time.sleep(1)                 
     
     dev.UpdateWireOuts()
-    temp_read = dev.GetWireOutValue(0x20)
+    x_read = dev.GetWireOutValue(0x20)
     
-    print("x-axis read is " + str(temp_read))
+    print("x-axis read is " + str(x_read))
     #PC_Control = 0; # send a "stop" signal to the FSM
     #dev.SetWireInValue(0x00, PC_Control) 
     #dev.UpdateWireIns()  # Update the WireIns
@@ -70,10 +70,9 @@ def write_to_device(reg_addr, value):
     dev.SetWireInValue(0x01, value) 
     dev.UpdateWireIns()  # Update the WireIns
 #%%
-def read_from_device(reg_addr, value):
+def read_from_device(reg_addr):
     dev.SetWireInValue(0x00, 0) 
     dev.UpdateWireIns()  # Update the WireIns
     time.sleep(1)
     dev.SetWireInValue(0x00, 2) 
-    dev.SetWireInValue(0x01, value) 
     dev.UpdateWireIns()  # Update the WireIns
