@@ -58,7 +58,5 @@ module Main_TB();
     initial begin
         #0 PC_rx <= 0;
         #400 PC_rx <= 1;
-        #500000 PC_rx <= 0;
-        #400 PC_rx <= 2;
     end                    
 endmodule
