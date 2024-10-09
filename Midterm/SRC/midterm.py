@@ -67,7 +67,7 @@ def write_to_device(reg_addr, value):
     dev.UpdateWireIns()  # Update the WireIns
     time.sleep(1)
     dev.SetWireInValue(0x00, 1) 
-    dev.SetWireInValue(0x01, value) 
+    dev.SetWireInValue(0x01, reg_addr) 
     dev.UpdateWireIns()  # Update the WireIns
 #%%
 def read_from_device(reg_addr):
@@ -75,4 +75,5 @@ def read_from_device(reg_addr):
     dev.UpdateWireIns()  # Update the WireIns
     time.sleep(1)
     dev.SetWireInValue(0x00, 2) 
+    dev.SetWireInValue(0x01, reg_addr)
     dev.UpdateWireIns()  # Update the WireIns
