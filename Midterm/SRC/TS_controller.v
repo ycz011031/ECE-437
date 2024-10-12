@@ -24,6 +24,7 @@ module TS_controller(
     input clk,
     
     input wire [31:0] PC_rx,
+    input wire [31:0] PC_slave_addr,
     input wire [31:0] PC_addr,
     input wire [31:0] PC_val,
     output reg [31:0] PC_tx,
@@ -57,14 +58,6 @@ module TS_controller(
     localparam ns_rx     = 2'b11;
     localparam ns_end    = 2'b00;
     
-    localparam linear_addr_wr = 8'b00110010;
-    localparam linear_addr_rd = 8'b00110011;
-    localparam magnet_addr_wr = 8'b00111100;
-    localparam magnet_addr_rd = 8'b00111101;
-    //localparam crl_reg_addr = 8'b00100000;
-    //localparam crl_reg_val = 8'b00110111;     
-    //localparam accele_reg_addr  = 8'b10101001; 
-    
     initial begin
         cur_state <= idle_;
         next_step <= ns_end;
@@ -89,17 +82,18 @@ module TS_controller(
     always @(posedge clk) begin
         case (cur_state)
             idle_ : begin
-                PC_rx_reg <= PC_rx;
-                if (PC_rx_reg == 2'b00 && PC_rx == 2'b01) begin
+                PC_rx_reg[1:0] <= PC_rx[1:0];
+                if (PC_rx_reg[1:0] == 2'b00 && PC_rx[1:0] == 2'b01) begin
                     cur_state <= start_wr;
                 end
-                if (PC_rx_reg == 2'b00 && PC_rx == 2'b10) begin
+                if (PC_rx_reg[1:0] == 2'b00 && PC_rx[1:0] == 2'b10) begin
                     cur_state <= start_rt;
                 end
             end
+            //Write single byte
             start_wr: begin
                 ready_reg <= ready;
-                tx_byte_reg <= linear_addr_wr;
+                tx_byte_reg <= PC_slave_addr[7:0];
                 next_step <= ns_start;                
                 if (ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= tx_wr;
@@ -109,7 +103,7 @@ module TS_controller(
                 case (tx_flag)
                     1'b0: begin
                         ready_reg <= ready;
-                        tx_byte_reg <= PC_addr;
+                        tx_byte_reg <= PC_addr[7:0];
                         next_step <= ns_tx;
                         if(ready_reg == 1'b0 && ready == 1'b1) begin
                             tx_flag <= 1'b1;
@@ -117,7 +111,7 @@ module TS_controller(
                     end
                     1'b1: begin
                         ready_reg <= ready;
-                        tx_byte_reg <= PC_val;
+                        tx_byte_reg <= PC_val[7:0];
                         next_step <= ns_tx;
                         if(ready_reg == 1'b0 && ready == 1'b1) begin
                             cur_state <= end_wr;
@@ -131,9 +125,10 @@ module TS_controller(
                 next_step <= ns_end;
                 cur_state <= idle_;
             end
+            //Read two byte
             start_rt: begin
                 ready_reg <= ready;
-                tx_byte_reg <= linear_addr_wr;
+                tx_byte_reg <= PC_slave_addr[7:0];
                 next_step <= ns_start;                
                 if (ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= tx_rt;
@@ -141,7 +136,7 @@ module TS_controller(
             end
             tx_rt: begin
                 ready_reg <= ready;
-                tx_byte_reg <= PC_addr;
+                tx_byte_reg <= PC_addr[7:0];
                 next_step <= ns_tx;
                 if(ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= rstart_rt;
@@ -149,7 +144,7 @@ module TS_controller(
             end
             rstart_rt : begin
                 ready_reg <= ready;
-                tx_byte_reg <= linear_addr_rd;
+                tx_byte_reg <= (PC_slave_addr[7:0] + 1);
                 next_step <= ns_start;
                 if (ready_reg == 1'b0 && ready == 1'b1) begin
                     cur_state <= rx_rt;
@@ -164,13 +159,13 @@ module TS_controller(
                         1'b0: begin
                             byte2_flag <= 1'b1;
                             for (i=0; i<8; i =i+1) begin
-                                PC_tx_reg[15-i] <= rx_byte_reg[7-i];
+                                PC_tx_reg[7-i] <= rx_byte_reg[7-i];
                             end
                         end
                         1'b1: begin
                             byte2_flag <= 1'b0;
                             for (i=0; i<8; i = i+1) begin
-                                PC_tx_reg[7-i] <= rx_byte_reg[7-i];
+                                PC_tx_reg[15-i] <= rx_byte_reg[7-i];
                             end
                             cur_state <= end_rt;
                         end
@@ -182,6 +177,7 @@ module TS_controller(
                 next_step <= ns_end;
                 cur_state <= idle_;
                 PC_tx <= PC_tx_reg;
+                PC_tx_reg <= 0;
              end
              default : begin
                 tx_byte_reg <= {8{1'b0}};
