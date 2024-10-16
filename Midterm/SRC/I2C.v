@@ -31,6 +31,7 @@ module I2C_driver(
     output reg ACK,
     output reg SCL,
     output reg SDA,
+    output reg busy,
     
     output reg [5:0] State,
     input  wire [7:0] tx_byte,
@@ -80,7 +81,9 @@ module I2C_driver(
     always @(posedge clk) begin
         case (State)
             idle_ : begin
+                busy <= 1'b0;
                 if (next_step == 2'b01)begin
+                     busy <= 1'b1;
                      State <= start_;
                      clk_counter <= 10'd400;
                      bit_counter <= 0;

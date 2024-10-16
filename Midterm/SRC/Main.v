@@ -84,7 +84,10 @@ module Main(
     wire [7:0] tx_byte,rx_byte;
     wire [1:0] next_step;
     wire ready;
-    I2C_driver I2C_SERDES (        
+    wire busy;
+    I2C_driver I2C_SERDES ( 
+        .busy(busy),
+               
         .led(led),
         .clk(clk),
         .ADT7420_A0(ADT7420_A0),
@@ -103,8 +106,9 @@ module Main(
         .ready(ready)
         );
     // I2C SERDES ////////////////////////////////////////////////////////////////////////
-    
-    
+    wire [9:0] cur_state;
+    wire [31:0] PC_rx_reg1;
+    wire [31:0] PC_rx_reg2;
     //Sensor Controller///////////////////////////////////////////////////////////////////
     TS_controller TS_controller(
         .clk(clk),
@@ -116,14 +120,18 @@ module Main(
         .next_step(next_step),
         .tx_byte(tx_byte),
         .rx_byte(rx_byte),
+        .cur_state(cur_state),
+        .PC_rx_reg1(PC_rx_reg1),
+        .PC_rx_reg2(PC_rx_reg2),
         .ready(ready)
     );
     //Sensor Controller/////////////////////////////////////////////////////////////////////    
     
     //Instantiate the ILA module
     ila_0 ila_sample12 ( 
-        .clk(ILA_Clk),
-        .probe0({State, SDA, SCL, ACK}),
-        .probe1(next_step),
-        .probe2(PC_rx));                        
+        .clk(clk),
+        .probe0({State, SDA, SCL, busy}),
+        .probe1(PC_rx_reg1),
+        .probe2(PC_rx_reg2),
+        .probe3(cur_state));
 endmodule

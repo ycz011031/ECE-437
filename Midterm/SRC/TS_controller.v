@@ -30,6 +30,9 @@ module TS_controller(
     output reg [31:0] PC_tx,
     output reg [1:0] next_step,
     output reg [7:0] tx_byte,
+    output reg [9:0] cur_state,
+    output reg [7:0] PC_rx_reg1,
+    output reg [7:0] PC_rx_reg2,
     input wire [7:0] rx_byte,
     input wire ready  
     );
@@ -37,8 +40,8 @@ module TS_controller(
     reg ready_reg;
     reg [7:0] tx_byte_reg;
     reg [7:0] rx_byte_reg;
-    reg [9:0] cur_state;
-    reg [31:0] PC_rx_reg;
+//    reg [9:0] cur_state;
+//    reg [31:0] PC_rx_reg;
     reg [31:0] PC_tx_reg;
     reg tx_flag;
     reg byte2_flag;
@@ -61,7 +64,8 @@ module TS_controller(
     initial begin
         cur_state <= idle_;
         next_step <= ns_end;
-        PC_rx_reg <= 0;
+        PC_rx_reg1 <= 0;
+        PC_rx_reg2 <= 0;
         PC_tx_reg <= 0;
         tx_byte_reg <= 0;
         rx_byte_reg <= 0;
@@ -78,15 +82,16 @@ module TS_controller(
         end
     end        
     
-    
+
     always @(posedge clk) begin
         case (cur_state)
             idle_ : begin
-                PC_rx_reg[1:0] <= PC_rx[1:0];
-                if (PC_rx_reg[1:0] == 2'b00 && PC_rx[1:0] == 2'b01) begin
+                PC_rx_reg1 <= PC_rx;
+                PC_rx_reg2 <= PC_rx_reg1;
+                if (PC_rx_reg2[0] == 1'b0 && PC_rx_reg1[0] == 1'b1) begin
                     cur_state <= start_wr;
                 end
-                if (PC_rx_reg[1:0] == 2'b00 && PC_rx[1:0] == 2'b10) begin
+                if (PC_rx_reg2[1] == 1'b0 && PC_rx_reg1[1] == 1'b1) begin
                     cur_state <= start_rt;
                 end
             end
