@@ -99,7 +99,7 @@ for i in range (0, number_of_device):
     try:
         device_temp = device_manager.open_resource(devices[i])
         print("Instrument connect on USB port number [" + str(i) + "] is " + device_temp.query("*IDN?"))
-        if (device_temp.query("*IDN?") == 'HEWLETT-PACKARD,E3631A,0,3.2-6.0-2.0\r\n'):
+        if (device_temp.query("*IDN?") == 'HEWLETT-PACKARD,E3631A,0,3.2-6.0-2.0HEWLETT-PACKARD,E3631A,0,3.2-6.0-2.0\r\n'):
             power_supply_id = i
         if (device_temp.query("*IDN?") == 'HEWLETT-PACKARD,E3631A,0,3.0-6.0-2.0\r\n'):
             power_supply_id = i
