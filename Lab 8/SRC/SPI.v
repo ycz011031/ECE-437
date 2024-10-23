@@ -133,6 +133,7 @@ always @(posedge clk) begin
                         end else begin
                             bit_counter <= 3'b111;
                             clk_counter <= 3'b000;
+                            tx_addrr <= tx_addrr + 1;
                             if(command_empty == 1'b1)cur_state   <= SPIED;
                             else begin
                                 if (command_FIFO[command_addrr] == 2'b01) cur_state <= SPITX;

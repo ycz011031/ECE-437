@@ -95,7 +95,7 @@ module Main(
     wire [7:0] Spi_rx_reg;
     wire [7:0] Spi_tx_reg;
     //SPI SERDES
-    SPI_driver(
+    SPI_driver SPI_driver(
     .clk(clk),
     .cur_state(SPI_state),
     
@@ -113,7 +113,7 @@ module Main(
     .Spi_tx_reg(Spi_tx_reg)  
     );
     //SPI controller
-    SPI_controller(
+    SPI_controller SPI_controller(
     .clk(clk),
     .PC_rx(PC_rx),
     .PC_addr(PC_addr),

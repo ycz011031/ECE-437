@@ -40,6 +40,8 @@ module SPI_controller(
     reg [7:0] tx_byte_reg;
     reg [7:0] rx_byte_reg;
     reg [2:0] read_counter;
+    reg [9:0] cur_state;
+    reg [31:0] PC_rx_reg1, PC_rx_reg2;
     
     localparam idle_     = 10'b0000000001;
     localparam start_wr  = 10'b0000000010;
@@ -56,7 +58,6 @@ module SPI_controller(
         cur_state <= idle_;
         PC_rx_reg1 <= 0;
         PC_rx_reg2 <= 0;
-        PC_tx_reg <= 0;
         tx_byte_reg <= 0;
         rx_byte_reg <= 0;
         busy_reg <= 1'b1;
@@ -90,13 +91,14 @@ module SPI_controller(
             //Write single byte
             start_wr: begin
                 tx_byte_reg <= {1'b1, PC_addr[6:0]};
-                cur_state <= tx_wr;
+                cur_state <= tx_wr1;
             end
             tx_wr1: begin
                 tx_byte_reg <= PC_val[7:0];
                 command_read <= 1'b1;
                 rw <= 2'b01;
                 tx_read <= 1'b1;
+                cur_state <= tx_wr2;
             end
             tx_wr2: begin
                 command_read <= 1'b1;
@@ -135,14 +137,12 @@ module SPI_controller(
                     rx_read <= 1'b1;
                     cur_state <= end_rt;
                 end
-                PC_tx <= PC_tx_reg;
-                PC_tx_reg <= 0;
             end
             end_rt: begin
                 rx_read <= 1'b0;
                 read_counter <= read_counter + 1;
                 if (read_counter == 2) begin
-                    PC_tx[7:0] <= rx_byte_reg
+                    PC_tx[7:0] <= rx_byte_reg;
                     read_counter <= 0;
                     cur_state <= idle_;
                 end
