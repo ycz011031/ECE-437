@@ -33,44 +33,34 @@ module SPI_controller(
     output reg [7:0] tx_byte,
     output reg [1:0] rw,
     input wire [7:0] rx_byte,
-    input wire ready  
+    input wire busy  
     );
     
-    reg ready_reg;
+    reg busy_reg;
     reg [7:0] tx_byte_reg;
     reg [7:0] rx_byte_reg;
-//    reg [9:0] cur_state;
-//    reg [31:0] PC_rx_reg;
-    reg [31:0] PC_tx_reg;
-    reg tx_flag;
-    reg byte2_flag;
+    reg [2:0] read_counter;
     
-    localparam idle_     = 9'b000000001;
-    localparam start_wr  = 9'b000000010;
-    localparam tx_wr     = 9'b000000100;
-    localparam end_wr    = 9'b000001000;
-    localparam start_rt  = 9'b000010000;
-    localparam tx_rt     = 9'b000100000;
-    localparam rstart_rt = 9'b001000000;
-    localparam rx_rt     = 9'b010000000;
-    localparam end_rt    = 9'b100000000;
-    
-    localparam ns_start  = 2'b01;
-    localparam ns_tx     = 2'b10;
-    localparam ns_rx     = 2'b11;
-    localparam ns_end    = 2'b00;
+    localparam idle_     = 10'b0000000001;
+    localparam start_wr  = 10'b0000000010;
+    localparam tx_wr1    = 10'b0000000100;
+    localparam tx_wr2    = 10'b0000001000;
+    localparam end_wr    = 10'b0000010000;
+    localparam start_rt  = 10'b0000100000;
+    localparam tx_rt     = 10'b0001000000;
+    localparam rx_rt     = 10'b0010000000;
+    localparam wait_rt   = 10'b0100000000;
+    localparam end_rt    = 10'b1000000000;
     
     initial begin
         cur_state <= idle_;
-        next_step <= ns_end;
         PC_rx_reg1 <= 0;
         PC_rx_reg2 <= 0;
         PC_tx_reg <= 0;
         tx_byte_reg <= 0;
         rx_byte_reg <= 0;
-        tx_flag <= 1'b0;
-        byte2_flag  <= 1'b0;
-        ready_reg <= 1'b1;
+        busy_reg <= 1'b1;
+        read_counter <= 0;
     end
     
     integer i;
@@ -85,6 +75,9 @@ module SPI_controller(
     always @(posedge clk) begin
         case (cur_state)
             idle_ : begin
+                command_read <= 1'b0;
+                tx_read <= 1'b0;
+                rx_read <= 1'b0;
                 PC_rx_reg1 <= PC_rx;
                 PC_rx_reg2 <= PC_rx_reg1;
                 if (PC_rx_reg2[0] == 1'b0 && PC_rx_reg1[0] == 1'b1) begin
@@ -97,24 +90,19 @@ module SPI_controller(
             //Write single byte
             start_wr: begin
                 tx_byte_reg <= {1'b1, PC_addr[6:0]};
-                rw <= 2'b01;
                 cur_state <= tx_wr;
             end
-            tx_wr: begin
-                case (tx_flag)
-                    1'b0: begin
-                        tx_byte_reg <= PC_val[7:0];
-                        command_read <= 1'b1;
-                        tx_read <= 1'b1;
-                        tx_flag <= 1'b1;
-                    end
-                    1'b1: begin
-                        command_read <= 1'b1;
-                        tx_read <= 1'b1;
-                        tx_flag <= 1'b0;
-                        cur_state <= end_wr;
-                    end
-                endcase
+            tx_wr1: begin
+                tx_byte_reg <= PC_val[7:0];
+                command_read <= 1'b1;
+                rw <= 2'b01;
+                tx_read <= 1'b1;
+            end
+            tx_wr2: begin
+                command_read <= 1'b1;
+                rw <= 2'b01;
+                tx_read <= 1'b1;
+                cur_state <= end_wr;
             end
             end_wr : begin
                 tx_byte_reg <= {8{1'b0}};
@@ -124,63 +112,45 @@ module SPI_controller(
             end
             //Read two byte
             start_rt: begin
-                ready_reg <= ready;
-                tx_byte_reg <= PC_slave_addr[7:0];
-                next_step <= ns_start;                
-                if (ready_reg == 1'b0 && ready == 1'b1) begin
-                    cur_state <= tx_rt;
-                end
+                tx_byte_reg <= {1'b0, PC_addr[6:0]};
+                cur_state <= tx_rt;
             end
             tx_rt: begin
-                ready_reg <= ready;
-                tx_byte_reg <= PC_addr[7:0];
-                next_step <= ns_tx;
-                if(ready_reg == 1'b0 && ready == 1'b1) begin
-                    cur_state <= rstart_rt;
-                end
-            end
-            rstart_rt : begin
-                ready_reg <= ready;
-                tx_byte_reg <= (PC_slave_addr[7:0] + 1);
-                next_step <= ns_start;
-                if (ready_reg == 1'b0 && ready == 1'b1) begin
-                    cur_state <= rx_rt;
-                end
+                command_read <= 1'b1;
+                rw <= 2'b01;
+                tx_read <= 1'b1;
+                cur_state <= rx_rt;
             end
             rx_rt : begin
-                ready_reg <= ready;
-                tx_byte_reg <= {8{byte2_flag}};
-                next_step <= ns_rx;
-                if (ready_reg == 1'b0 && ready == 1'b1) begin
-                    case(byte2_flag)
-                        1'b0: begin
-                            byte2_flag <= 1'b1;
-                            for (i=0; i<8; i =i+1) begin
-                                PC_tx_reg[7-i] <= rx_byte_reg[7-i];
-                            end
-                        end
-                        1'b1: begin
-                            byte2_flag <= 1'b0;
-                            for (i=0; i<8; i = i+1) begin
-                                PC_tx_reg[15-i] <= rx_byte_reg[7-i];
-                            end
-                            cur_state <= end_rt;
-                        end
-                    endcase
-                end
-             end
-             end_rt : begin
+                command_read <= 1'b1;
+                tx_read <= 1'b0;
+                rw <= 2'b10;
+                cur_state <= end_rt;
+            end
+            wait_rt : begin
                 tx_byte_reg <= {8{1'b0}};
-                next_step <= ns_end;
-                cur_state <= idle_;
+                command_read <= 1'b0;
+                rw <= 2'b00;
+                if (!busy) begin
+                    rx_read <= 1'b1;
+                    cur_state <= end_rt;
+                end
                 PC_tx <= PC_tx_reg;
                 PC_tx_reg <= 0;
-             end
-             default : begin
+            end
+            end_rt: begin
+                rx_read <= 1'b0;
+                read_counter <= read_counter + 1;
+                if (read_counter == 2) begin
+                    PC_tx[7:0] <= rx_byte_reg
+                    read_counter <= 0;
+                    cur_state <= idle_;
+                end
+            end
+            default : begin
                 tx_byte_reg <= {8{1'b0}};
-                next_step <= ns_end;
                 cur_state <= idle_;
-             end
+            end
          endcase
      end            
              

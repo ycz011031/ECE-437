@@ -125,7 +125,7 @@ module Main(
     .rw(Spi_rw),
     .tx_byte(Spi_tx_reg),
     .rx_byte(Spi_rx_reg),
-    .ready(busy)
+    .busy(busy)
     );
     //I2C SERDES///////////////////////////////////////////////////////////////////////
 //    wire SCL, SDA,ACK; 
