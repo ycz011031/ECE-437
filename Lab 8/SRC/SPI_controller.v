@@ -20,19 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TS_controller(
+module SPI_controller(
     input clk,
     
     input wire [31:0] PC_rx,
-    input wire [31:0] PC_slave_addr,
     input wire [31:0] PC_addr,
     input wire [31:0] PC_val,
     output reg [31:0] PC_tx,
-    output reg [1:0] next_step,
+    output reg command_read,
+    output reg rx_read,
+    output reg tx_read,
     output reg [7:0] tx_byte,
-    output reg [9:0] cur_state,
-    output reg [7:0] PC_rx_reg1,
-    output reg [7:0] PC_rx_reg2,
+    output reg [1:0] rw,
     input wire [7:0] rx_byte,
     input wire ready  
     );
@@ -97,37 +96,30 @@ module TS_controller(
             end
             //Write single byte
             start_wr: begin
-                ready_reg <= ready;
-                tx_byte_reg <= PC_slave_addr[7:0];
-                next_step <= ns_start;                
-                if (ready_reg == 1'b0 && ready == 1'b1) begin
-                    cur_state <= tx_wr;
-                end
+                tx_byte_reg <= {1'b1, PC_addr[6:0]};
+                rw <= 2'b01;
+                cur_state <= tx_wr;
             end
             tx_wr: begin
                 case (tx_flag)
                     1'b0: begin
-                        ready_reg <= ready;
-                        tx_byte_reg <= PC_addr[7:0];
-                        next_step <= ns_tx;
-                        if(ready_reg == 1'b0 && ready == 1'b1) begin
-                            tx_flag <= 1'b1;
-                        end
+                        tx_byte_reg <= PC_val[7:0];
+                        command_read <= 1'b1;
+                        tx_read <= 1'b1;
+                        tx_flag <= 1'b1;
                     end
                     1'b1: begin
-                        ready_reg <= ready;
-                        tx_byte_reg <= PC_val[7:0];
-                        next_step <= ns_tx;
-                        if(ready_reg == 1'b0 && ready == 1'b1) begin
-                            cur_state <= end_wr;
-                            tx_flag <= 1'b0;
-                        end
+                        command_read <= 1'b1;
+                        tx_read <= 1'b1;
+                        tx_flag <= 1'b0;
+                        cur_state <= end_wr;
                     end
                 endcase
             end
             end_wr : begin
                 tx_byte_reg <= {8{1'b0}};
-                next_step <= ns_end;
+                command_read <= 1'b0;
+                tx_read <= 1'b0;
                 cur_state <= idle_;
             end
             //Read two byte

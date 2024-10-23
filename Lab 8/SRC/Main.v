@@ -44,7 +44,7 @@ module Main(
     wire [31:0]     PC_slave_addr;
     wire [31:0]     PC_addr;
     wire [31:0]     PC_val;
-    wire [31:0]     PMOD_UTIL;
+    // wire [31:0]     PMOD_UTIL;
     wire [112:0]    okHE;   
     wire [64:0]     okEH;     
     wire ready_to_read;
@@ -73,9 +73,9 @@ module Main(
     okWireIn wire13 (   .okHE(okHE), 
                         .ep_addr(8'h03), 
                         .ep_dataout(PC_val));
-    okWireIn wire14 (   .okHE(okHE), 
-                        .ep_addr(8'h04), 
-                        .ep_dataout(PMOD_UTIL));                    
+    // okWireIn wire14 (   .okHE(okHE), 
+    //                     .ep_addr(8'h04), 
+    //                     .ep_dataout(PMOD_UTIL));                    
     okWireOut wire20 (  .okHE(okHE), 
                         .okEH(okEHx[ 0*65 +: 65 ]),
                         .ep_addr(8'h20), 
@@ -113,7 +113,20 @@ module Main(
     .Spi_tx_reg(Spi_tx_reg)  
     );
     //SPI controller
-    
+    SPI_controller(
+    .clk(clk),
+    .PC_rx(PC_rx),
+    .PC_addr(PC_addr),
+    .PC_val(PC_val),
+    .PC_tx(PC_tx),
+    .command_read(command_read),
+    .rx_read(rx_read),
+    .tx_read(tx_read),
+    .rw(Spi_rw),
+    .tx_byte(Spi_tx_reg),
+    .rx_byte(Spi_rx_reg),
+    .ready(busy)
+    );
     //I2C SERDES///////////////////////////////////////////////////////////////////////
 //    wire SCL, SDA,ACK; 
 //    wire [5:0] State;
