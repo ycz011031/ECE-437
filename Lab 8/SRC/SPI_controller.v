@@ -127,7 +127,7 @@ module SPI_controller(
                 command_read <= 1'b1;
                 tx_read <= 1'b0;
                 rw <= 2'b10;
-                cur_state <= end_rt;
+                cur_state <= wait_rt;
             end
             wait_rt : begin
                 tx_byte_reg <= {8{1'b0}};

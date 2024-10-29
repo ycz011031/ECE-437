@@ -86,7 +86,7 @@ module Main(
                         .ep_datain(PC_pipe_out),
                         .ep_read(ready_to_read));    
     // PC communication////////////////////////////////////////////////////////////////
-    wire [2:0] SPI_state;
+    wire [3:0] SPI_state;
     wire busy;
     wire command_read;
     wire rx_read;
@@ -196,7 +196,7 @@ module Main(
     //Instantiate the ILA module
     ila_0 ila_sample12 ( 
         .clk(clk),
-        .probe0({PMOD_A1,PMOD_A2,PMOD_A3,PMOD_A4,PMOD_A7,PMOD_A8,PMOD_A9,PMOD_A10}),
+        .probe0({CVM300_SPI_EN, CVM300_SPI_CLK, CVM300_SPI_OUT, CVM300_SPI_IN}),
         .probe1(PMOD_UTIL),
         .probe2(motor_fb),
         .probe3(cur_state));
