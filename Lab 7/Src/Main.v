@@ -124,6 +124,7 @@ module Main(
     wire [9:0] cur_state;
     wire [31:0] PC_rx_reg1;
     wire [31:0] PC_rx_reg2;
+    wire [3:0] motor_fb;
     //Sensor Controller///////////////////////////////////////////////////////////////////
     TS_controller TS_controller(
         .clk(clk),
@@ -154,15 +155,15 @@ module Main(
         .PMOD_8(PMOD_A8),
         .PMOD_9(PMOD_A9),
         .PMOD_10(PMOD_A10),
-        
+        .motor_fb(motor_fb),
         .PMOD_UTIL(PMOD_UTIL)
     );     
     
     //Instantiate the ILA module
     ila_0 ila_sample12 ( 
         .clk(clk),
-        .probe0({State, SDA, SCL, busy}),
-        .probe1(PC_rx_reg1),
-        .probe2(PC_rx_reg2),
+        .probe0({PMOD_A1,PMOD_A2,PMOD_A3,PMOD_A4,PMOD_A7,PMOD_A8,PMOD_A9,PMOD_A10}),
+        .probe1(PMOD_UTIL),
+        .probe2(motor_fb),
         .probe3(cur_state));
 endmodule
