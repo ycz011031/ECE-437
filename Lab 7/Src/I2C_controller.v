@@ -5,7 +5,7 @@
 // 
 // Create Date: 2024/09/22 14:34:42
 // Design Name: 
-// Module Name: TS_controller
+// Module Name: I2C_controller
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module TS_controller(
+module I2C_controller(
     input clk,
     
     input wire [31:0] PC_rx,
