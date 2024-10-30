@@ -32,15 +32,15 @@ module SPI_controller(
     output reg tx_read,
     output reg [7:0] tx_byte,
     output reg [1:0] rw,
+    output reg [9:0] cur_state,
     input wire [7:0] rx_byte,
     input wire busy  
     );
     
-    reg busy_reg;
+    reg busy_reg = 0;
     reg [7:0] tx_byte_reg;
     reg [7:0] rx_byte_reg;
     reg [2:0] read_counter;
-    reg [9:0] cur_state;
     reg [31:0] PC_rx_reg1, PC_rx_reg2;
     
     localparam idle_     = 10'b0000000001;
@@ -60,15 +60,16 @@ module SPI_controller(
         PC_rx_reg2 <= 0;
         tx_byte_reg <= 0;
         rx_byte_reg <= 0;
-        busy_reg <= 1'b1;
+        busy_reg <= 1'b0;
         read_counter <= 0;
     end
     
     integer i;
+
     always @(posedge clk) begin
         for (i=0; i<8; i=i+1) begin
-            tx_byte[i] <= tx_byte_reg[7-i];
-            rx_byte_reg[i] <= rx_byte[7-i];
+            tx_byte[i] <= tx_byte_reg[i];
+            rx_byte_reg[i] <= rx_byte[i];
         end
     end        
     
@@ -133,7 +134,8 @@ module SPI_controller(
                 tx_byte_reg <= {8{1'b0}};
                 command_read <= 1'b0;
                 rw <= 2'b00;
-                if (!busy) begin
+                busy_reg <= busy;
+                if (busy_reg == 1'b1 && busy == 1'b0) begin
                     rx_read <= 1'b1;
                     cur_state <= end_rt;
                 end

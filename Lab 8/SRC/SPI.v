@@ -109,6 +109,7 @@ always @(posedge clk) begin
                         cur_state      <= SPITX;
                         clk_counter    <= 3'b000;
                         bit_counter    <= 3'b111;
+                        busy <= 1'b1;
                     end
                     //add error detection if the first command out of IDLE is rx, this is incorrectly set by the controller
                     // also add error detection if when entering TX, check for TX_FIFO empty, if not, controller is incorrectly set
@@ -120,6 +121,7 @@ always @(posedge clk) begin
                         SPI_EN   <= 1'b1;
                         SPI_CLK  <= 1'b0;
                         SPI_MOSI <= tx_FIFO[tx_addrr][bit_counter];
+                        busy <= 1'b1;
                         clk_counter <= clk_counter + 1;
                     end
                     3'b100 : begin
