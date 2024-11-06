@@ -158,11 +158,5 @@ module Main(
     );
 
     //Instantiate the ILA module
-    ila_0 ila_sample12 ( 
-        .clk(clk),
-        .probe0({CVM300_SPI_EN, CVM300_SPI_CLK, CVM300_SPI_OUT, CVM300_SPI_IN, CVM300_CLK_OUT, CVM300_SYS_RES_N, CVM300_FRAME_REQ, busy}),
-        .probe1(PC_rx),
-        .probe2(PC_tx),
-        .probe3(SPI_state),
-        .probe4(controller_state));
+
 endmodule

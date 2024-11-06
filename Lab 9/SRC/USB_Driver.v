@@ -21,7 +21,7 @@ module USB_Driver(
     input   [31:0]FIFO_data_in,
     output  FIFO_full, // currently not used
     output  FIFO_BT,
-    
+    output FIFO_read_enable,
     input USB_ready 
     );
     

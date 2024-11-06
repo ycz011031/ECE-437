@@ -150,7 +150,7 @@ module CVM300_driver(
         CMV_clk_CDC <= CVM300_CLK_OUT;
         CMV_clk <= CMV_clk_CDC;
         CMV_clk_reg <= CMV_clk;
-        if (CMV_clk ==1'b1 && CMV_clk_reg == 1'b0) begin
+        if (CMV_clk ==1'b0 && CMV_clk_reg == 1'b1) begin
             if (CVM300_LVAL == 1'b1 && CVM300_DVAL == 1'b1) begin
                 FIFO_data_in_reg[9:0] <= CVM300_D;
                 FIFO_data_in_reg[31:10] <= 0;

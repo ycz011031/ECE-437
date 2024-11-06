@@ -25,7 +25,8 @@ module Main(
     inout  okAA
 );
 
-    
+    wire clk;
+
     IBUFGDS osc_clk(
         .O(clk),
         .I(sys_clkp),
@@ -33,6 +34,21 @@ module Main(
     ); 
     
     
+    
+    wire [31:0]PC_rx;
+    wire [31:0]PC_tx;
+    wire [31:0]PC_command;
+    wire [31:0]PC_addr;
+    wire [31:0]PC_val;
+    
+    wire FIFO_wr_clk;
+    wire FIFO_wr_enable;
+    wire [31:0]FIFO_data_in;
+    wire FIFO_full;
+    wire FIFO_BT;
+    wire FIFO_read_enable;
+    
+    wire USB_ready;
     
     //PC communication/////////////////////////////////////////////////////////////////
     USB_Driver USB_Driver(
@@ -54,6 +70,7 @@ module Main(
         .FIFO_data_in(FIFO_data_in),
         .FIFO_full(FIFO_full),
         .FIFO_BT(FIFO_BT),
+        .FIFO_read_enable(FIFO_read_enable),
         
         .USB_ready(USB_ready));
 
@@ -78,6 +95,7 @@ module Main(
         .PC_tx(PC_tx),
         .PC_command(PC_command),
         .PC_addr(PC_addr),
+        .PC_val(PC_val),
         
         .FIFO_wr_clk(FIFO_wr_clk),
         .FIFO_wr_enable(FIFO_wr_enable),
@@ -89,5 +107,10 @@ module Main(
     //Instantiate the ILA module
     ila_0 ila_sample12 ( 
         .clk(clk),
-        .probe0(CVM300_D));
+        .probe0({CVM300_D,CVM300_Line_valid,CVM300_Data_valid,CVM300_CLK_OUT}),
+        .probe1(CVM300_FRAME_REQ),
+        .probe2(FIFO_BT),
+        .probe3(FIFO_read_enable),
+        .probe4(FIFO_wr_enable),
+        .probe5(USB_ready));
 endmodule
