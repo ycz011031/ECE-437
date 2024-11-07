@@ -82,8 +82,8 @@ def setup_image_sensor():
     write_to_device(117, 91)
     print("setting up done")
 #%%
-def print_a_frame(HS_counter):
-    buf = bytearray(315392*4)
+def read_a_frame(HS_counter):
+    buf = bytearray(315392)
     dev.SetWireInValue(0x01, HS_counter)
     dev.UpdateWireIns()
     dev.ReadFromBlockPipeOut(0xa0, 1024, buf)
@@ -116,12 +116,13 @@ while (True):
     input()
     
     HS_counter = HS_counter + 2
-    buf = print_a_frame(HS_counter)
-    for i in range(len(buf) // 4):
-        print(buf[i*4])
+    buf = read_a_frame(HS_counter)
+    for i in range(len(buf)):
+        result = buf[i]
+        print(result)
     width, height = 648, 480
-    arr = np.frombuffer(buf, dtype=np.uint32, count=314928*4)
-    arr = arr.reshape(486*4, 648)
+    arr = np.frombuffer(buf, dtype=np.uint8, count=314928)
+    arr = arr.reshape(486, 648)
     plt.imshow(arr, cmap = 'gray')
     plt.show()
 #  # Read data from BT PipeOut

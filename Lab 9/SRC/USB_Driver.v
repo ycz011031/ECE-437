@@ -17,6 +17,7 @@ module USB_Driver(
     output [31:0]PC_val,
     
     input   FIFO_wr_clk,
+    input   FIFO_read_reset,
     input   FIFO_wr_enable,
     input   [31:0]FIFO_data_in,
     output  FIFO_full, // currently not used
@@ -66,15 +67,20 @@ module USB_Driver(
                         .ep_addr(8'h20), 
                         .ep_datain(PC_tx));  
    
-       
+    wire [31:0] FIFO_data_out;
+    wire prog_full;
+    wire FIFO_write_reset;
     fifo_generator_0 FIFO_for_Counter_BTPipe_Interface (
         .wr_clk(FIFO_wr_clk),
+        .wr_rst(FIFO_write_reset),
         .rd_clk(okClk),
-        .din(FIFO_data_in),
+        .rd_rst(FIFO_read_reset),
+        .din(FIFO_data_in[9:2]),
         .wr_en(FIFO_wr_enable),
         .rd_en(FIFO_read_enable),
         .dout(FIFO_data_out),
         .full(FIFO_full),
+        .prog_full(prog_full),
         .empty(FIFO_empty)    
     );
       
@@ -85,6 +91,6 @@ module USB_Driver(
         .ep_datain(FIFO_data_out), 
         .ep_read(FIFO_read_enable),
         .ep_blockstrobe(FIFO_BT), 
-        .ep_ready(USB_ready)
+        .ep_ready(prog_full)
     );                                                                     
 endmodule

@@ -47,7 +47,8 @@ module Main(
     wire FIFO_full;
     wire FIFO_BT;
     wire FIFO_read_enable;
-    
+    wire FIFO_read_reset;
+    wire FIFO_write_reset;
     wire USB_ready;
     
     //PC communication/////////////////////////////////////////////////////////////////
@@ -66,6 +67,8 @@ module Main(
         .PC_val(PC_val),
         
         .FIFO_wr_clk(FIFO_wr_clk),
+        .FIFO_read_reset(FIFO_read_reset),
+        .FIFO_write_reset(FIFO_write_reset),
         .FIFO_wr_enable(FIFO_wr_enable),
         .FIFO_data_in(FIFO_data_in),
         .FIFO_full(FIFO_full),
@@ -98,6 +101,8 @@ module Main(
         .PC_val(PC_val),
         
         .FIFO_wr_clk(FIFO_wr_clk),
+        .FIFO_read_reset(FIFO_read_reset),
+        .FIFO_write_reset(FIFO_write_reset),
         .FIFO_wr_enable(FIFO_wr_enable),
         .FIFO_data_in(FIFO_data_in),
         .FIFO_full(FIFO_full),
