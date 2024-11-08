@@ -112,14 +112,10 @@ HS_counter = 0
 # We will use WireIn instructions to send data to the FPGA
 time.sleep(1)
 setup_image_sensor()
-while (True):
+while (True):    
     input()
-    
     HS_counter = HS_counter + 2
     buf = read_a_frame(HS_counter)
-    for i in range(len(buf)):
-        result = buf[i]
-        print(result)
     width, height = 648, 480
     arr = np.frombuffer(buf, dtype=np.uint8, count=314928)
     arr = arr.reshape(486, 648)
