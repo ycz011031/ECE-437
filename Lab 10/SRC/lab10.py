@@ -114,19 +114,57 @@ HS_counter = 0
 time.sleep(1)
 setup_image_sensor()
 last_time = 0
-while (True):
+counter = 0
+intencities1 = np.array([])
+intencities2 = np.array([])
+write_to_device(42,98)
+write_to_device(43,2)
+for counter in range(200):
     current_time = time.time()
     print("delta time" + str(current_time - last_time))    
-    last_time= current_time 
+    last_time = current_time 
     HS_counter = HS_counter + 2
     buf = read_a_frame(HS_counter)
     arr = np.frombuffer(buf, dtype=np.uint8, count=314928)
     arr = arr.reshape((486,648))
-#    arr = arr.reshape(486, 648)
+    if counter < 100:
+        intencities1 = np.append(intencities1, arr[50][50])
+    if counter == 99:
+        write_to_device(42, 61)
+        write_to_device(43, 0)
+    if counter >= 100 and counter < 200:
+        intencities2 = np.append(intencities2, arr[50][50])
     cv2.imshow("image",arr)
     cv2.waitKey(1)
-    plt.imshow(arr, cmap = 'gray')
-    plt.show()
+    
+plt.figure()
+plt.plot(range(100), intencities1)
+plt.title("intencity1 vs. frame")
+plt.xlabel("frame")
+plt.ylabel("intencity1")
+plt.draw()
+print("noise ", np.std(intencities1))
+
+plt.figure()
+plt.plot(range(100), intencities2)
+plt.title("intencity2 vs. frame")
+plt.xlabel("frame")
+plt.ylabel("intencity2")
+plt.draw()
+plt.show()
+print("noise ", np.std(intencities2))
+#while (True):
+#    current_time = time.time()
+#    print("delta time" + str(current_time - last_time))    
+#    last_time = current_time 
+#    HS_counter = HS_counter + 2
+#    buf = read_a_frame(HS_counter)
+#    arr = np.frombuffer(buf, dtype=np.uint8, count=314928)
+#    arr = arr.reshape((486,648))
+#    cv2.imshow("image",arr)
+#    cv2.waitKey(1)
+#    plt.imshow(arr, cmap = 'gray')
+#    plt.show()
 #  # Read data from BT PipeOut
 
 #for i in range (0, 1024, 1):    
