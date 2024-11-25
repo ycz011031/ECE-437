@@ -137,22 +137,24 @@ for counter in range(200):
     cv2.imshow("image",arr)
     cv2.waitKey(1)
     
+    
+print("temporal noise at 10 msec ", np.std(intencities1))
+print("temporal noise at 1 msec ", np.std(intencities2))    
+    
 plt.figure()
 plt.plot(range(100), intencities1)
-plt.title("intencity1 vs. frame")
+plt.title("intencity vs. frame at 10 msec")
 plt.xlabel("frame")
-plt.ylabel("intencity1")
+plt.ylabel("intencity")
 plt.draw()
-print("noise ", np.std(intencities1))
 
 plt.figure()
 plt.plot(range(100), intencities2)
-plt.title("intencity2 vs. frame")
+plt.title("intencity vs. frame at 1 msec")
 plt.xlabel("frame")
-plt.ylabel("intencity2")
+plt.ylabel("intencity")
 plt.draw()
 plt.show()
-print("noise ", np.std(intencities2))
 #while (True):
 #    current_time = time.time()
 #    print("delta time" + str(current_time - last_time))    
