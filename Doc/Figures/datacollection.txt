@@ -1,0 +1,18 @@
+Spatial noise = std / mean for a uniform scene
+With pure green image: 0.9966
+With pure white image: 0.2425 (std: 28.0596 mean: 115.6888)
+
+Temporal noise = std of a pixel for 100 frames
+With pure green image: 0.5745
+With lab image: 0.3370
+
+SNR of the sensor = 20 * log10(mean/std) dB for a uniform scene
+With a pure white image: 12.3042 dB
+
+Acceleration and magnetic reading noise = std of the readings over 100 readings
+x acceleration reading noise:  56.06852949739274
+y acceleration reading noise:  63.85904477832408
+z acceleration reading noise:  77.36062047320974
+x magnetic reading noise:  1.460273946901745
+y magnetic reading noise:  1.4246403054806502
+z magnetic reading noise:  1.4317471843869642
